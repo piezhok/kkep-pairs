@@ -12,7 +12,7 @@ body{
 
 .text{
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--tg-theme-text-color);
+    color: var(--tg-theme-button-text-color);
     font-weight: bold;
     font-size: 150%;
 }
@@ -24,8 +24,7 @@ body{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
-    color: var(--tg-theme-button-text-color);
-    /* transform: translate(-50%, -50%); */
+    color: var(--tg-theme-text-color);
 }
 
 #timeBox {
