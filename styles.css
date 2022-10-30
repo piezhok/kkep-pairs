@@ -45,7 +45,8 @@ body{
     left: 2%;
     width: 96%;
     height: 20%;
-    background-color: #adadad;
+    background-color: var(--tg-theme-button-color);
+    filter: brightness(30%);
     /* -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0); */
     border-radius:40px;
