@@ -1,3 +1,7 @@
+:root{
+    --bar_color: color-mix(in srgb, var(--tg-theme-button-color) 40%, black);
+}
+
 body{
     background-color: var(--tg-theme-bg-color);
 }
@@ -48,8 +52,7 @@ body{
     left: 2%;
     width: 96%;
     height: 20%;
-    background-color: var(--tg-theme-button-color);
-    filter: brightness(30%);
+    background-color: var(--bar_color);
     /* -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0); */
     border-radius:40px;
