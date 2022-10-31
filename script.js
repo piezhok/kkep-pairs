@@ -179,14 +179,14 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
 let today = new Date().getDay();
 if (today != 6 && today !=0) {
     setInterval(getTime, 1000, PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
-    updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
+    // updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
 } else if (today == 6) {
     setInterval(getTime, 1000, SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
-    updateEmoji(SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
+    // updateEmoji(SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
 }
 else if (today == 0) {
     timePassed.innerHTML = 'Выходной!';
     timeLeft.innerHTML = '';
     line.style.width = '100%';
-    emoji.src = 'Stickers/Sunday.gif';
+    // emoji.src = 'Stickers/Sunday.gif';
 }
