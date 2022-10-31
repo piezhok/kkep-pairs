@@ -1,7 +1,3 @@
-:root{
-    --bar_color: color-mix(in srgb, var(--tg-theme-button-color) 40%, black);
-}
-
 body{
     background-color: var(--tg-theme-bg-color);
 }
@@ -12,7 +8,7 @@ body{
 
 .text{
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--tg-theme-button-text-color);
+    color: white;
     font-weight: bold;
     font-size: 150%;
 }
@@ -20,7 +16,7 @@ body{
 #title{
     position: absolute;
     width:100%;
-    top:10px;
+    top:9px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
@@ -30,35 +26,35 @@ body{
 #timeBox {
     width: 100%;
     position: absolute;
-    top:5px;
+    top:3%;
+    left:20px;
 }
 
 #timerPassed {
     position: absolute;
     top:45px;
-    left:20px;
+    
 }
 
 #timerLeft {
     position: absolute;
     top:75px;
-    left:20px;
 }
 
 #progress_bar {
     position: absolute;
+    border-radius:30px;
     top: 45px;
     left: 2%;
     width: 96%;
-    height: 20%;
-    background-color: var(--bar_color);
-    /* -webkit-mask:linear-gradient(#fff 0 0);
-          mask:linear-gradient(#fff 0 0); */
-    border-radius:40px;
+    height: 150px;
+    background-color: black;
+    -webkit-mask:linear-gradient(#fff 0 0);
+          mask:linear-gradient(#fff 0 0);
     overflow: hidden
 }
 
-/* #progress_bar::before {
+#progress_bar::before {
     content:"";
     position:absolute;
     top:0;
@@ -66,33 +62,33 @@ body{
     right:0;
     bottom:0;
     background-image: linear-gradient(90deg, rgba(96,2,51,1) 0%, rgba(0,39,69,1) 50%, rgba(0,62,26,1) 100%);
-  } */
+  }
 
 #progress_line{
     width: 0%;
     height: 100%;
-    background: var(--tg-theme-button-color);
-    /* -webkit-mask:linear-gradient(#fff 0 0);
-          mask:linear-gradient(#fff 0 0); */
+    background: white;
+    -webkit-mask:linear-gradient(#fff 0 0);
+          mask:linear-gradient(#fff 0 0);
 }
 
-/* #progress_line::before {
+#progress_line::before {
     content:"";
     position:absolute;
     top:0;
     left:0;
     right:0;
     bottom:0;
-    background-image: linear-gradient(90deg, rgba(240,5,127,1) 0%, rgba(0,98,173,1) 50%, rgba(0,156,66,1) 100%);
-  } */
+    background: linear-gradient(90deg, rgba(240,5,127,1) 0%, rgba(0,98,173,1) 50%, rgba(0,156,66,1) 100%);
+}
 
-img{
+#emoji{
     width: 60%;
 }
 
-#sticker{
+#emoji_placeholder{
+    width:96%;
     position: absolute;
     top:30%;
-    /* left:25%; */
     text-align: center;
 }

@@ -3,19 +3,19 @@ const PAIR_DURATION = 4800000 // В миллисекундах
 const PAIRS_HOURSTART = [8, 10, 12, 13];
 const PAIRS_MINSTART = [45, 25, 5, 35];
 const BREAKS_HOURSTART = [8 ,10, 11, 13];
-const BREAKS_MINSTART = [25 ,5, 45, 25];
+const BREAKS_MINSTART = [0 ,5, 45, 25];
 
 const SATURDAY_PAIRS_HOURSTART = [8, 10, 11, 13];
 const SATURDAY_PAIRS_MINSTART = [45, 10, 35, 0];
 const SATURDAY_BREAKS_HOURSTART = [8 ,10, 11, 12];
-const SATURDAY_BREAKS_MINSTART = [35 ,0, 25, 50];
+const SATURDAY_BREAKS_MINSTART = [0 ,0, 25, 50];
 
 const line = document.getElementById('progress_line');
 let timeLeft = document.getElementById('timerLeft');
 let timePassed = document.getElementById('timerPassed');
 let title = document.getElementById('title');
 let test = document.getElementById('test');
-let sticker = document.getElementById('img');
+let emoji = document.getElementById('emoji');
 
 function padTo2(num) {
     if (num === 0) return '00'
@@ -101,7 +101,7 @@ function updateBreakProgress(hourBreakStart, minBreakStart, breakDuration) {    
 function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
     let now = new Date();
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
-    if (nowTime < (8*60+25)*60000) {
+    if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
         timePassed.innerHTML = 'Хорошего';
         timeLeft.innerHTML = 'дня!';
         line.style.width = '0%';
@@ -110,14 +110,15 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
         let start = (PairHourArray[i]*60 + PairMinArray[i])*60000;
         let end = start + PAIR_DURATION;
         let startBreak = (breakHourArray[i]*60 + breakMinArray[i])*60000;
-
-        if (i < 3  &&  PairHourArray != SATURDAY_PAIRS_HOURSTART) {
+        
+        if (i == 1) {
+            var duration = 45;
+        } else if (i < 3  &&  PairHourArray != SATURDAY_PAIRS_HOURSTART) {
             var duration = 20;
-            var endBreak = startBreak + duration*60000;
         } else {
             var duration = 10;
-            var endBreak = startBreak + duration*60000;
         }
+        let endBreak = startBreak + duration*60000;
 
         if ( nowTime >= start && nowTime < end ) {
             let endHour = Math.floor(end/3600000);
@@ -131,7 +132,7 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
             updateBreakProgress(breakHourArray[i], breakMinArray[i], duration);
             return;
 
-        } else {
+        } else if (nowTime > (8*60+25)*60000) {
             timePassed.innerHTML = 'Пары';
             timeLeft.innerHTML = 'кончились!';
             line.style.width = '100%';
@@ -139,14 +140,53 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
     }
 }
 
+function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
+    let now = new Date();
+    let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
+    if ( nowTime < 5*3600000) {
+        emoji.src = 'Stickers/Sunday.gif';
+    }
+    if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
+        emoji.src = 'Stickers/Start.gif';
+    }
+    for (let i = 0; i<4; i++) {
+        let start = (PairHourArray[i]*60 + PairMinArray[i])*60000;
+        let end = start + PAIR_DURATION;
+        let startBreak = (breakHourArray[i]*60 + breakMinArray[i])*60000;
+        if (i == 1) {
+            var duration = 45;
+        } else if (i < 3  &&  PairHourArray != SATURDAY_PAIRS_HOURSTART) {
+            var duration = 20;
+        } else {
+            var duration = 10;
+        }
+        let endBreak = startBreak + duration*60000;
+        if ( nowTime >= start && nowTime < end ) {
+            emoji.src = 'Stickers/Pair.gif';
+            return;
+
+        } else if ( nowTime >= startBreak && nowTime < endBreak )  {
+            emoji.src = 'Stickers/Break.gif';
+            return;
+
+        } else if (nowTime > (8*60+25)*60000) {
+            emoji.src = 'Stickers/End.gif';
+        }
+    }
+}
+
+
 let today = new Date().getDay();
-if (today != 6 && today !=0) {       // добавь != воскресенье
+if (today != 6 && today !=0) {
     setInterval(getTime, 1000, PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
+    updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
 } else if (today == 6) {
     setInterval(getTime, 1000, SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
+    updateEmoji(SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
 }
 else if (today == 0) {
     timePassed.innerHTML = 'Выходной!';
     timeLeft.innerHTML = '';
     line.style.width = '100%';
+    emoji.src = 'Stickers/Sunday.gif';
 }
