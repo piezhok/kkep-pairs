@@ -111,7 +111,7 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
         let end = start + PAIR_DURATION;
         let startBreak = (breakHourArray[i]*60 + breakMinArray[i])*60000;
         
-        if (i == 1) {
+        if (i == 0) {
             var duration = 45;
         } else if (i < 3  &&  PairHourArray != SATURDAY_PAIRS_HOURSTART) {
             var duration = 20;
@@ -145,15 +145,17 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
     if ( nowTime < 5*3600000) {
         emoji.src = 'Stickers/Sunday.gif';
+        return;
     }
-    if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
+    else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
         emoji.src = 'Stickers/Start.gif';
+        return;
     }
     for (let i = 0; i<4; i++) {
         let start = (PairHourArray[i]*60 + PairMinArray[i])*60000;
         let end = start + PAIR_DURATION;
         let startBreak = (breakHourArray[i]*60 + breakMinArray[i])*60000;
-        if (i == 1) {
+        if (i == 0) {
             var duration = 45;
         } else if (i < 3  &&  PairHourArray != SATURDAY_PAIRS_HOURSTART) {
             var duration = 20;
@@ -178,15 +180,15 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
 
 let today = new Date().getDay();
 if (today != 6 && today !=0) {
+    updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
     setInterval(getTime, 1000, PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
-    // updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
 } else if (today == 6) {
+    updateEmoji(SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
     setInterval(getTime, 1000, SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
-    // updateEmoji(SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
 }
 else if (today == 0) {
     timePassed.innerHTML = 'Выходной!';
     timeLeft.innerHTML = '';
     line.style.width = '100%';
-    // emoji.src = 'Stickers/Sunday.gif';
+    emoji.src = 'Stickers/Sunday.gif';
 }
