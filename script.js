@@ -144,11 +144,11 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     let now = new Date();
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
     if ( nowTime < 5*3600000) {
-        emoji.src = 'Stickers/Sunday.gif';
+        emoji.src = 'Stickers/Sunday.webp';
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
-        emoji.src = 'Stickers/Start.gif';
+        emoji.src = 'Stickers/Start.webp';
         return;
     }
     for (let i = 0; i<4; i++) {
@@ -164,15 +164,15 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         }
         let endBreak = startBreak + duration*60000;
         if ( nowTime >= start && nowTime < end ) {
-            emoji.src = 'Stickers/Pair.gif';
+            emoji.src = 'Stickers/Pair.webp';
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
-            emoji.src = 'Stickers/Break.gif';
+            emoji.src = 'Stickers/Break.webp';
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
-            emoji.src = 'Stickers/End.gif';
+            emoji.src = 'Stickers/End.webp';
         }
     }
 }
@@ -190,5 +190,5 @@ else if (today == 0) {
     timePassed.innerHTML = 'Выходной!';
     timeLeft.innerHTML = '';
     line.style.width = '100%';
-    emoji.src = 'Stickers/Sunday.gif';
+    emoji.src = 'Stickers/Sunday.webp';
 }

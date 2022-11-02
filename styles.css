@@ -1,7 +1,7 @@
 body{
     background-color: var(--tg-theme-bg-color);
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 .container{
@@ -84,13 +84,13 @@ body{
     background: linear-gradient(90deg, rgba(240,5,127,1) 0%, rgba(0,98,173,1) 50%, rgba(0,156,66,1) 100%);
 }
 
-#emoji{
+#emoji {
     width: 200px;
 }
 
 #emoji_placeholder{
     width:96%;
     position: absolute;
-    top:200px;
+    top:220px;
     text-align: center;
 }
