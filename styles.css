@@ -16,9 +16,9 @@ body{
 }
 
 #title{
+    width:100%;
     position: absolute;
-    width:96%;
-    top:9px;
+    top: -25%;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
@@ -35,7 +35,6 @@ body{
 #timerPassed {
     position: absolute;
     top:45px;
-    
 }
 
 #timerLeft {
@@ -46,14 +45,15 @@ body{
 #progress_bar {
     position: absolute;
     border-radius:30px;
-    top: 45px;
+    top: 6%;
     left: 2%;
     width: 96%;
-    height: 150px;
+    min-height: 150px;
+    height: 20%;
     background-color: black;
     -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0);
-    overflow: hidden
+    /* overflow: hidden; */
 }
 
 #progress_bar::before {
@@ -84,13 +84,55 @@ body{
     background: linear-gradient(90deg, rgba(240,5,127,1) 0%, rgba(0,98,173,1) 50%, rgba(0,156,66,1) 100%);
 }
 
+
+#fake_bar {
+    position: absolute;
+    border-radius:30px;
+    top: 6%;
+    left: 2%;
+    width: 96%;
+    min-height: 150px;
+    height: 20%;
+}
+
 #emoji {
-    width: 200px;
+    width: 50%;
 }
 
 #emoji_placeholder{
-    width:96%;
+    width:100%;
     position: absolute;
-    top:220px;
+    /* top:220px; */
+    top: 125%;
+    text-align: center;
+}
+
+
+button, input {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+
+    /* width: 30%; */
+    /* height: 100%; */
+    padding: 20px 40px;
+    font-size: 180%;
+
+    border-radius: 14px;
+    border-width: 0px;
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    
+}
+
+#buttonF {      /* пока не юзаю
+    /* box-sizing: 100%; */
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    /* width: 30%;
+    height: 0;
+    padding-bottom: 15%; */
+    background-color:black;
     text-align: center;
 }
