@@ -1,4 +1,5 @@
-const PAIR_DURATION = 4800000 // В миллисекундах
+const PAIR_DURATION = 4800000; // В миллисекундах
+const SATURDAY_PAIR_DURATION = 4500000;
 
 const PAIRS_HOURSTART = [8, 10, 12, 13];
 const PAIRS_MINSTART = [45, 25, 5, 35];
@@ -108,7 +109,10 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
     }
     for (let i = 0; i<4; i++) {
         let start = (PairHourArray[i]*60 + PairMinArray[i])*60000;
-        let end = start + PAIR_DURATION;
+        if (PairHourArray != SATURDAY_PAIRS_HOURSTART)
+            var end = start + PAIR_DURATION;
+        else
+            var end = start + SATURDAY_PAIR_DURATION;
         let startBreak = (breakHourArray[i]*60 + breakMinArray[i])*60000;
         
         if (i == 0) {
@@ -144,16 +148,19 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     let now = new Date();
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
     if ( nowTime < 5*3600000) {
-        emoji.src = 'Stickers/Sunday.webp';
+        emoji.src = 'Stickers/Sunday.webm';
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
-        emoji.src = 'Stickers/Start.webp';
+        emoji.src = 'Stickers/Start.webm';
         return;
     }
     for (let i = 0; i<4; i++) {
         let start = (PairHourArray[i]*60 + PairMinArray[i])*60000;
-        let end = start + PAIR_DURATION;
+        if (PairHourArray != SATURDAY_PAIRS_HOURSTART)
+            var end = start + PAIR_DURATION;
+        else
+            var end = start + SATURDAY_PAIR_DURATION;
         let startBreak = (breakHourArray[i]*60 + breakMinArray[i])*60000;
         if (i == 0) {
             var duration = 45;
@@ -164,15 +171,15 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         }
         let endBreak = startBreak + duration*60000;
         if ( nowTime >= start && nowTime < end ) {
-            emoji.src = 'Stickers/Pair.webp';
+            emoji.src = 'Stickers/Pair.webm';
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
-            emoji.src = 'Stickers/Break.webp';
+            emoji.src = 'Stickers/Break.webm';
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
-            emoji.src = 'Stickers/End.webp';
+            emoji.src = 'Stickers/End.webm';
         }
     }
 }
@@ -190,5 +197,5 @@ else if (today == 0) {
     timePassed.innerHTML = 'Выходной!';
     timeLeft.innerHTML = '';
     line.style.width = '100%';
-    emoji.src = 'Stickers/Sunday.webp';
+    emoji.src = 'Stickers/Sunday.webm';
 }

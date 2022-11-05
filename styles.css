@@ -18,11 +18,18 @@ body{
 #title{
     width:100%;
     position: absolute;
-    top: -25%;
+    /* top: -25%; */
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
     color: var(--tg-theme-text-color);
+}
+
+#fake_title{
+    width:100%;
+    opacity: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
 }
 
 #timeBox {
@@ -43,13 +50,14 @@ body{
 }
 
 #progress_bar {
-    position: absolute;
+    position: relative;
     border-radius:30px;
-    top: 6%;
-    left: 2%;
-    width: 96%;
+    /* top: 6%;
+    left: 2%; */
+    left: 1%;
+    width: 96vw;
     min-height: 150px;
-    height: 20%;
+    height: 20vh;
     background-color: black;
     -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0);
@@ -110,18 +118,20 @@ body{
 
 button, input {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
+    bottom: 20px;
+    right: 20px;
 
     /* width: 30%; */
     /* height: 100%; */
     padding: 20px 40px;
     font-size: 180%;
 
-    border-radius: 14px;
+    border-radius: 200px;
     border-width: 0px;
-    background-color: var(--tg-theme-button-color);
-    color: var(--tg-theme-button-text-color);
+    /* background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color); */
+    background-color: lightslategray;
+    color: white;
     
 }
 
