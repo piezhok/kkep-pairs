@@ -1,7 +1,7 @@
 body{
     background-color: var(--tg-theme-bg-color);
     overflow-x: hidden;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
 }
 
 .container{
@@ -16,7 +16,7 @@ body{
 }
 
 #title{
-    width:100%;
+    width: 96%;
     position: absolute;
     /* top: -25%; */
     text-align: center;
@@ -26,7 +26,7 @@ body{
 }
 
 #fake_title{
-    width:100%;
+    width: 96%;
     opacity: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
@@ -50,12 +50,11 @@ body{
 }
 
 #progress_bar {
-    position: relative;
+    position: absolute;
     border-radius:30px;
-    /* top: 6%;
-    left: 2%; */
-    left: 1%;
-    width: 96vw;
+    top: 6%;
+    left: 2%;
+    width: 96%;
     min-height: 150px;
     height: 20vh;
     background-color: black;
@@ -94,8 +93,8 @@ body{
 
 
 #fake_bar {
-    position: absolute;
     border-radius:30px;
+    position: absolute;
     top: 6%;
     left: 2%;
     width: 96%;
@@ -104,26 +103,32 @@ body{
 }
 
 #emoji {
-    width: 50%;
+    /* position: absolute; */
+    width: 70%;
+    height: 10%;
+    /* background-color: red; */
+    transform: translateX(20%);
 }
 
 #emoji_placeholder{
-    width:100%;
+    width: 100%;
     position: absolute;
     /* top:220px; */
     top: 125%;
+    left:0;
+    /* background-color: black; */
     text-align: center;
 }
 
 
 button, input {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 5vw;
+    right: 5vw;
 
     /* width: 30%; */
     /* height: 100%; */
-    padding: 20px 40px;
+    padding: 10px 10px;
     font-size: 180%;
 
     border-radius: 200px;

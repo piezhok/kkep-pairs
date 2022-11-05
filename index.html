@@ -3,13 +3,13 @@
 <head>
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8">
-    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>    
 </head>
 <body>
     <div class="container">
         
         <div id="title">≧◉ᴥ◉≦</div>
-        <div id="fake_title">≧◉ᴥ◉≦</div>
+        <div id="fake_title"></div>
         <div id="progress_bar">
             <div id="progress_line"></div>
             <div id="timeBox">
@@ -21,7 +21,9 @@
         <div id="fake_bar">
             <!-- <div id="title">≧◉ᴥ◉≦</div> -->
             <div id="emoji_placeholder">
-                <video muted autoplay loop src="" id="emoji"></video>
+                <!-- <video muted autoplay loop src="" id="emoji"></video> -->
+                <tgs-player autoplay loop mode="normal" src="Stickers/Sunday.tgs" id="emoji">
+                </tgs-player>
             </div>
         </div>
 
@@ -37,5 +39,6 @@
 
     </div>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/tgs-player.js"></script>
 </body>
 </html>

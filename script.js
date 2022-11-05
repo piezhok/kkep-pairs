@@ -148,11 +148,11 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     let now = new Date();
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
     if ( nowTime < 5*3600000) {
-        emoji.src = 'Stickers/Sunday.webm';
+        emoji.src = 'Stickers/Sunday.tgs';
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
-        emoji.src = 'Stickers/Start.webm';
+        emoji.src = 'Stickers/Start.tgs';
         return;
     }
     for (let i = 0; i<4; i++) {
@@ -171,15 +171,18 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         }
         let endBreak = startBreak + duration*60000;
         if ( nowTime >= start && nowTime < end ) {
-            emoji.src = 'Stickers/Pair.webm';
+            emoji.src = 'Stickers/Pair.tgs';
+            // emoji.setAttribute("src", "Stickers/End.tgs");
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
-            emoji.src = 'Stickers/Break.webm';
+            emoji.src = 'Stickers/Break.tgs';
+            // emoji.setAttribute("src", "Stickers/End.tgs");
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
-            emoji.src = 'Stickers/End.webm';
+            emoji.src = 'Stickers/End.tgs';
+            // emoji.setAttribute("src", "Stickers/End.tgs");
         }
     }
 }
@@ -197,5 +200,6 @@ else if (today == 0) {
     timePassed.innerHTML = 'Выходной!';
     timeLeft.innerHTML = '';
     line.style.width = '100%';
-    emoji.src = 'Stickers/Sunday.webm';
+    emoji.src = 'Stickers/Sunday.tgs';
+    // emoji.setAttribute("src", "Stickers/Sunday.tgs");
 }
