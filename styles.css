@@ -151,7 +151,7 @@ body{
 } */
 
 p {
-    color: var(--tg-theme-hint-color);
+    color: var(--tg-theme-text-color);
     text-align: left;
     /* position: absolute; */
     margin: auto;
