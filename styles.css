@@ -1,7 +1,7 @@
 body{
     background-color: var(--tg-theme-bg-color);
-    max-width: 100vw;
-    max-height: 100vh;
+    /* max-width: 100%; */
+    /* max-height: 100vh; */
     overflow-x: hidden;
     /* overflow-y: hidden; */
 }
@@ -18,7 +18,7 @@ body{
     font-size: 150%;
 }
 
-#title{
+#title {
     width: 96%;
     position: absolute;
     /* top: -25%; */
@@ -135,12 +135,11 @@ body{
 
 #button_box {
     background-color: var(--tg-theme-secondary-bg-color);
-    border-radius: 10px 10px 0 0;
     width: 100%;
     height: 20%;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0%;
+    left: 0%;
     vertical-align: center;
     /* overflow: hidden; */
     display: flex;
