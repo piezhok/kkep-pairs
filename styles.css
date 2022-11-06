@@ -3,7 +3,7 @@ body{
     max-width: 100vw;
     max-height: 100vh;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 .container{
@@ -134,7 +134,8 @@ body{
 
 
 #button_box {
-    /* background-color: black; */
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: 10px 10px 0 0;
     width: 100%;
     height: 20%;
     position: absolute;
