@@ -153,8 +153,8 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
-        emoji.src = 'Stickers/Start.webm';
-        emoji.src = 'Stickers/Sunday.tgs';
+        // emoji.src = 'Stickers/Start.webm';
+        emoji.src = 'Stickers/Start.tgs';
         return;
     }
     for (let i = 0; i<4; i++) {
@@ -174,17 +174,17 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         let endBreak = startBreak + duration*60000;
         if ( nowTime >= start && nowTime < end ) {
             // emoji.src = 'Stickers/Pair.webm';
-            emoji.src = 'Stickers/Sunday.tgs';
+            emoji.src = 'Stickers/Pair.tgs';
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
             // emoji.src = 'Stickers/Break.webm';
-            emoji.src = 'Stickers/Sunday.tgs';
+            emoji.src = 'Stickers/Break.tgs';
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
             // emoji.src = 'Stickers/End.webm';
-            emoji.src = 'Stickers/Sunday.tgs';
+            emoji.src = 'Stickers/End.tgs';
         }
     }
 }
