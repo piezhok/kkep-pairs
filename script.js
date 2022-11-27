@@ -126,13 +126,13 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
 
         if ( nowTime >= start && nowTime < end ) {
             let endHour = Math.floor(end/3600000);
-            let endMin = (end/60000)-endHour*60
+            let endMin = (end/60000)-endHour*60;
             title.innerHTML = `${i+1} пара – ${PairHourArray[i]}:${padTo2(PairMinArray[i])} - ${endHour}:${padTo2(endMin)}`
             updatePairProgress(PairHourArray[i], PairMinArray[i]);
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
-            title.innerHTML = `Перемена – ${duration} минут`
+            title.innerHTML = `Перерыв – ${duration} минут`;
             updateBreakProgress(breakHourArray[i], breakMinArray[i], duration);
             return;
 
@@ -199,8 +199,9 @@ if (today != 6 && today !=0) {
     setInterval(getTime, 1000, SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
 }
 else if (today == 0) {
-    timePassed.innerHTML = 'Выходной!';
-    timeLeft.innerHTML = '';
+    title.innerHTML = `Выходной`
+    timePassed.innerHTML = 'Приятного';
+    timeLeft.innerHTML = 'отдыха!';
     line.style.width = '100%';
     // emoji.src = 'Stickers/Sunday.webm';
     emoji.src = 'Stickers/Sunday.tgs';
