@@ -1,10 +1,10 @@
 body{
     background-color: var(--tg-theme-bg-color);
-    /* max-width: 100%; */
     /* max-height: 100vh; */
     overflow-x: hidden;
     /* overflow-y: hidden; */
-    min-width: 100%;
+    /* min-width: 100%; */
+    max-width: 100%;
     /* max-width: 390px; */
     margin: 0;
 }
@@ -21,10 +21,9 @@ body{
 }
 
 #title {
-    width: 96%;
-    margin: 0 auto;
     /* position: absolute; */
     /* top: -25%; */
+    margin: 2px 0;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
@@ -136,7 +135,7 @@ body{
 #emoji {
     width: 70%;
     max-width: 500px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 #emoji_placeholder{
