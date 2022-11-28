@@ -132,7 +132,10 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
-            title.innerHTML = `Перерыв – ${duration} минут`;
+            if ( duration != 45 )
+                title.innerHTML = `Перерыв – ${duration} минут`;
+            else 
+                title.innerHTML = `Перерыв`;
             updateBreakProgress(breakHourArray[i], breakMinArray[i], duration);
             return;
 

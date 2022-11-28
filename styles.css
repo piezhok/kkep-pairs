@@ -73,7 +73,7 @@ body{
     width: 96%;
     /* width: 565px; */
     min-height: 150px;
-    height: 20%;
+    height: 20vh;
     background-color: black;
     -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0);
@@ -90,11 +90,10 @@ body{
     background-image: linear-gradient(90deg, rgba(96,2,51,1) 0%, rgba(0,39,69,1) 50%, rgba(0,62,26,1) 100%);
   }
 
-#progress_line{
-    position: absolute;
+#progress_line {
     width: 0%;
     height: 100%;
-    background: white;
+    background-color: white;
     -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0);
 }
@@ -106,7 +105,7 @@ body{
     left:0;
     right:0;
     bottom:0;
-    background: linear-gradient(90deg, rgba(240,5,127,1) 0%, rgba(0,98,173,1) 50%, rgba(0,156,66,1) 100%);
+    background-image: linear-gradient(90deg, rgba(240,5,127,1) 0%, rgba(0,98,173,1) 50%, rgba(0,156,66,1) 100%);
 }
 
 
