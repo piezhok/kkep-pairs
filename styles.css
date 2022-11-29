@@ -72,8 +72,7 @@ body{
     /* top: 35px; */
     width: 96%;
     /* width: 565px; */
-    min-height: 150px;
-    height: 20vh;
+    height: 150px;
     background-color: black;
     -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0);
