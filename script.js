@@ -70,17 +70,20 @@ function getTimeFormatted(date, beforeS){       // beforeS = 'Passed' || 'Left'
     // return `${padTo2(hours)}:${padTo2(minutes)}:${padTo2(seconds)}`;
 }
 
-function updatePairProgress(hourStart, minStart) {
+function updatePairProgress(hourStart, minStart, duration) {
     let now = new Date();
     let start = new Date();
     start.setHours(hourStart, minStart, 0);
     let end = new Date();
-    end.setHours(start.getHours() + 1, start.getMinutes() + 20, 0);
+    if (duration == PAIR_DURATION)
+        end.setHours(start.getHours() + 1, start.getMinutes() + 20, 0);
+    else
+        end.setHours(start.getHours() + 1, start.getMinutes() + 15, 0);
     // timePassed.innerHTML = 'Прошло ' + getTimeFormatted(new Date(start - now));
     // timeLeft.innerHTML = 'Осталось ' + getTimeFormatted(new Date(end - now));
     getTimeFormatted(new Date(start - now), 'Passed');
     getTimeFormatted(new Date(end - now), 'Left');
-    let progress = (Math.abs(start - now))/PAIR_DURATION * 100;
+    let progress = (Math.abs(start - now))/duration * 100;
     line.style.width = `${progress}%`
 }
 
@@ -128,7 +131,10 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
             let endHour = Math.floor(end/3600000);
             let endMin = (end/60000)-endHour*60;
             title.innerHTML = `${i+1} пара – ${PairHourArray[i]}:${padTo2(PairMinArray[i])} - ${endHour}:${padTo2(endMin)}`
-            updatePairProgress(PairHourArray[i], PairMinArray[i]);
+            if (PairHourArray != SATURDAY_PAIRS_HOURSTART)
+                updatePairProgress(PairHourArray[i], PairMinArray[i], PAIR_DURATION);
+            else
+                updatePairProgress(PairHourArray[i], PairMinArray[i], SATURDAY_PAIR_DURATION);
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
