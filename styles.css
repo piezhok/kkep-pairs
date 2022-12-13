@@ -239,15 +239,19 @@ table {
     margin: 8vw auto;
     /* height: 40vw;
     width: 70vw; */
-    height: 40vw;
-    width: 45vw;
+    /* height: 40vw;
+    width: 45vw; */
+    height: 60vw;
+    width: 70vw;
     background-color: var(--tg-theme-secondary-bg-color);
     /* background-color: rgb(231, 231, 231); */
     color: var(--tg-theme-text-color);
     border-radius: 4vw;
-    padding: 2vw 3vw 2vw 3vw;
+    /* padding: 2vw 3vw; */
+    padding: 04vw 5vw;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 5vw;
+    /* font-size: 5vw; */
+    font-size: 9vw;
     text-align: center;
     /* word-spacing: 1vw; */
 }
