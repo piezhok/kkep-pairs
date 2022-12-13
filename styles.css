@@ -1,7 +1,10 @@
 body{
     background-color: var(--tg-theme-bg-color);
     overflow-x: hidden;
+    /* overflow-y: hidden; */
+    /* min-width: 100%; */
     max-width: 100%;
+    /* max-width: 390px; */
     margin: 0;
 }
 
@@ -13,36 +16,51 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-weight: bold;
-    font-size: 150%;
+    font-size: 4vw;
 }
 
 #title {
+    /* position: absolute; */
+    /* top: -25%; */
     margin-top: 2px;
     margin-bottom: 4px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 150%;
+    font-size: 5vw;
     color: var(--tg-theme-text-color);
 }
 
-#fake_title{
+/* #fake_title{
     width: 96%;
     opacity: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 150%;
-}
+} */
 
 #timeBox {
+    /* width: 100%;
+    height: 100%; */
+
     position: absolute;
     top:50%;
-    left: 20px;
-    transform: translate(0px, -50%);}
+    /* left: 20px; */
+    left: 4%;
+    transform: translate(0px, -50%);
+
+    /* left:20px; */
+    /* margin-left: 20px; */
+    /* margin: 0% 0px; */
+}
 
 #timerPassed {
+    /* position: absolute; */
+    /* top:45px; */
     margin-top: 0px;
 }
 
 #timerLeft {
+    /* position: absolute; */
+    /* top: 30px; */
     margin-top: 5px;
 }
 
@@ -51,9 +69,13 @@ body{
 
     margin: 0 auto;
 
-    border-radius:30px;
+    /* border-radius:30px; */
+    border-radius: 6vw;
+    /* top: 35px; */
     width: 96%;
-    height: 150px;
+    /* width: 565px; */
+    /* height: 150px; */
+    height: 25vw;
     background-color: black;
     -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0);
@@ -89,6 +111,28 @@ body{
 }
 
 
+/* #fake_bar {
+    border-radius:30px;
+    position: absolute;
+    top: 4%;
+    left: 2%;
+    width: 96%;
+    min-height: 150px;
+    height: 20%;
+} */
+
+
+/* #emoji {
+    width: 50%;
+}
+
+#emoji_placeholder{
+    width: 100%;
+    position: absolute;
+    top: 125%;
+    text-align: center;
+} */
+
 #emoji {
     width: 70%;
     height: 0%;
@@ -99,7 +143,7 @@ body{
 #emoji_placeholder{
     width: 100%;
     max-height: 0;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -116,18 +160,88 @@ body{
     display: flex;
 }
 
+/* #buttom_item {
+    
+} */
+
 p {
     color: var(--tg-theme-text-color);
     text-align: left;
+    /* position: absolute; */
     margin: auto;
+    /* top:0%; */
+    /* margin-right: 2%; */
     bottom: 10%;
     margin-left: 8%;
     font-size: 90%;
     font-family: Arial, Helvetica, sans-serif;
     width: 400px;
+    /* font-size: 90%; */
+    /* max-width: 70%; */
 }
 
 a {
     color: var(--tg-theme-link-color);
     text-decoration: none;
+}
+
+#me {
+    float: left;
+    width:56px;
+    height: 100px;
+    position: relative;
+    /* bottom: -10%; */
+    top: 8%;
+    left: 5%;
+}
+
+/* #me {                !!! внутри p !!!
+    width:50px;
+    position: absolute;
+    bottom: -5%;
+    left: -16%;
+} */
+
+button, input {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+
+    /* width: 30%; */
+    /* height: 100%; */
+    padding: 10px 15px;
+    font-size: 140%;
+
+    border-radius: 200px;
+    border-width: 0px;
+    /* background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color); */
+    background-color: lightslategray;
+    color: white;
+    
+}
+
+#buttonF {      /* пока не юзаю
+    /* box-sizing: 100%; */
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    /* width: 30%;
+    height: 0;
+    padding-bottom: 15%; */
+    background-color:black;
+    text-align: center;
+}
+
+table {
+    margin: 10vw auto;
+    height: 40vw;
+    width: 70vw;
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
+    border-radius: 4vw;
+    padding: 3vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vw;
+    text-align: center;
 }
