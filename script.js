@@ -17,6 +17,8 @@ let timePassed = document.getElementById('timerPassed');
 let title = document.getElementById('title');
 let test = document.getElementById('test');
 let emoji = document.getElementById('emoji');
+let bellList = document.getElementById('bell_list')
+let saturdayBellList = document.getElementById('saturday_bell_list')
 
 function padTo2(num) {
     if (num === 0) return '00'
@@ -206,6 +208,7 @@ if (today != 6 && today !=0) {
 } else if (today == 6) {
     updateEmoji(SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
     setInterval(getTime, 1000, SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
+
 }
 else if (today == 0) {
     title.innerHTML = `Выходной`

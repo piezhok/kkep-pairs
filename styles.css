@@ -136,35 +136,19 @@ body{
 } */
 
 #emoji {
-    width: 70%;
+    width: 60%;
     height: 0%;
     max-width: 500px;
     margin: 0 auto;
 }
 
 #emoji_placeholder{
+    margin: 0 auto;
     width: 100%;
     max-height: 0;
-    margin-top: 20vw;
+    /* margin-top: vw; */
     text-align: center;
 }
-
-
-#button_box {
-    background-color: var(--tg-theme-secondary-bg-color);
-    width: 100%;
-    height: 20%;
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    vertical-align: center;
-    /* overflow: hidden; */
-    display: flex;
-}
-
-/* #buttom_item {
-    
-} */
 
 p {
     color: var(--tg-theme-text-color);
@@ -187,56 +171,9 @@ a {
     text-decoration: none;
 }
 
-#me {
-    float: left;
-    width:56px;
-    height: 100px;
-    position: relative;
-    /* bottom: -10%; */
-    top: 8%;
-    left: 5%;
-}
-
-/* #me {                !!! внутри p !!!
-    width:50px;
-    position: absolute;
-    bottom: -5%;
-    left: -16%;
-} */
-
-button, input {
-    position: absolute;
-    top: 50%;
-    right: 50px;
-
-    /* width: 30%; */
-    /* height: 100%; */
-    padding: 10px 15px;
-    font-size: 140%;
-
-    border-radius: 200px;
-    border-width: 0px;
-    /* background-color: var(--tg-theme-button-color);
-    color: var(--tg-theme-button-text-color); */
-    background-color: lightslategray;
-    color: white;
-    
-}
-
-#buttonF {      /* пока не юзаю
-    /* box-sizing: 100%; */
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-    /* width: 30%;
-    height: 0;
-    padding-bottom: 15%; */
-    background-color:black;
-    text-align: center;
-}
-
 table {
-    margin: 5vw auto;
+    margin: 3vw auto;
+    width: 10vw;
     /* height: 40vw;
     width: 70vw; */
     /* height: 40vw;
@@ -259,3 +196,17 @@ table {
 .notlast>td {
     padding-bottom: 2vw;
 }
+
+/* #pairs_block {
+    display: flex;
+    grid-template-columns: auto auto;
+    column-gap: 1vw;
+} */
+
+/* #bell_list {
+    margin-left: 10vw;
+}
+
+#saturday_bell_list {
+    margin-right: 10vw;
+} */
