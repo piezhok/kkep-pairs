@@ -172,6 +172,7 @@ a {
 }
 
 table {
+    position: relative;
     margin: 3vw auto;
     width: 10vw;
     /* height: 40vw;
@@ -191,22 +192,35 @@ table {
     font-size: 5vw;
     text-align: center;
     /* word-spacing: 1vw; */
+    border: 0.5vw solid transparent;
+    /* background-clip: padding-box; */
+}
+
+table::after {
+    position: absolute;
+    top: -0.5vw; bottom: -0.5vw;
+    left: -0.5vw; right: -0.5vw;
+    background: linear-gradient(125deg, rgba(240,5,127,1) 0%, rgba(0,98,173,1) 50%, rgba(0,156,66,1) 100%);;
+    content: '';
+    z-index: -1;
+    border-radius: 4vw;
 }
 
 .notlast>td {
     padding-bottom: 2vw;
+    width: 100%;
+    margin: 0 50%;
 }
 
-/* #pairs_block {
+#pairs_block {
     display: flex;
-    grid-template-columns: auto auto;
-    column-gap: 1vw;
-} */
+}
 
-/* #bell_list {
-    margin-left: 10vw;
+#bell_list {
+    left: 3vw;
+    /* padding: 3vw 10vw; */
 }
 
 #saturday_bell_list {
-    margin-right: 10vw;
-} */
+    right: 3vw;
+}

@@ -200,15 +200,30 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     }
 }
 
+function highlight(list) {
+    // let i = 1
+    // let j = 0.5
+    // timer = setInterval(function() {
+    //     i += 0.5;
+    //     list.style.padding = `3vw ${i}vw`
+    //     if (list.style.padding == '3vw 10vw') {
+    //         clearInterval(timer)
+    //         return;
+    //     }
+    // }, 15)
+    list.style.backgroundClip = 'padding-box';
+    return;
+}
 
 let today = new Date().getDay();
 if (today != 6 && today !=0) {
     updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
     setInterval(getTime, 1000, PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
+    highlight(bellList);
 } else if (today == 6) {
     updateEmoji(SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
     setInterval(getTime, 1000, SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
-
+    highlight(saturdayBellList);
 }
 else if (today == 0) {
     title.innerHTML = `Выходной`
