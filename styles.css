@@ -182,7 +182,7 @@ table {
     /* height: 30vw;
     width: 35vw; */
     background-color: var(--tg-theme-secondary-bg-color);
-    background-color: #f4f4f5;
+    /* background-color: #f4f4f5; */
     color: var(--tg-theme-text-color);
     border-radius: 4vw;
     /* padding: 2vw 3vw; */
