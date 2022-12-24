@@ -116,7 +116,6 @@ table {
     margin: 4vw auto;
     width: 10vw;
     background-color: var(--tg-theme-secondary-bg-color);
-    background-color: #f4f4f5;
     color: var(--tg-theme-text-color);
     border-radius: 4vw;
     padding: 3vw 4vw;
