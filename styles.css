@@ -198,12 +198,8 @@ table {
     text-align: center;
     /* word-spacing: 1vw; */
     border-radius: 4vw;
-    border: 0.7vw solid transparent;
-    /* box-shadow: 0px 0px 0px 0.6vw transparent; */
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+    border: 0.7vw solid #f4f4f5;
+    /* background-clip: padding-box; */
 }
 
 table::after {
