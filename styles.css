@@ -142,7 +142,7 @@ body{
     margin: 0 auto;
 }
 
-#webm {
+#mov {
     width: 35%;
     height: 0%;
     max-width: 300px;
@@ -198,7 +198,7 @@ table {
     font-size: 5vw;
     text-align: center;
     /* word-spacing: 1vw; */
-    border: 0.6vw solid transparent;
+    border: 0.5vw solid transparent;
     background-clip: border-box;
 }
 
