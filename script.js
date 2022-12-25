@@ -160,25 +160,27 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     let now = new Date();
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
     if ( nowTime < 5*3600000) {
-        if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-            player.src = 'Stickers/Sunday.webm';
-            emoji.style.display = "none";
-        }
-        else {
-            emoji.src = 'Stickers/Sunday.tgs';
-            player.style.display = "none";
-        }
+        // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+        //     player.src = 'Stickers/Sunday.webm';
+        //     emoji.style.display = "none";
+        // }
+        // else {
+        //     emoji.src = 'Stickers/Sunday.tgs';
+        //     player.style.display = "none";
+        // }
+        emoji.src = 'Stickers/Sunday.tgs';
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
-        if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-            player.src = 'Stickers/Start.webm';
-            emoji.style.display = "none";
-        }
-        else {
-            emoji.src = 'Stickers/Start.tgs';
-            player.style.display = "none";
-        }
+        // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+        //     player.src = 'Stickers/Start.webm';
+        //     emoji.style.display = "none";
+        // }
+        // else {
+        //     emoji.src = 'Stickers/Start.tgs';
+        //     player.style.display = "none";
+        // }
+        emoji.src = 'Stickers/Start.tgs';
         return;
     }
     for (let i = 0; i<4; i++) {
@@ -197,36 +199,39 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         }
         let endBreak = startBreak + duration*60000;
         if ( nowTime >= start && nowTime < end ) {
-            if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-                player.src = 'Stickers/Pair.webm';
-                emoji.style.display = "none";
-            }
-            else {
-                emoji.src = 'Stickers/Pair.tgs';
-                player.style.display = "none";
-            }
+            // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+            //     player.src = 'Stickers/Pair.webm';
+            //     emoji.style.display = "none";
+            // }
+            // else {
+            //     emoji.src = 'Stickers/Pair.tgs';
+            //     player.style.display = "none";
+            // }
+            emoji.src = 'Stickers/Pair.tgs';
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
-            if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-                player.src = 'Stickers/Break.webm';
-                emoji.style.display = "none";
-            }
-            else {
-                emoji.src = 'Stickers/Break.tgs';
-                player.style.display = "none";
-            }
+            // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+            //     player.src = 'Stickers/Break.webm';
+            //     emoji.style.display = "none";
+            // }
+            // else {
+            //     emoji.src = 'Stickers/Break.tgs';
+            //     player.style.display = "none";
+            // }
+            emoji.src = 'Stickers/Break.tgs';
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
-            if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-                player.src = 'Stickers/End.webm';
-                emoji.style.display = "none";
-            }
-            else {
-                emoji.src = 'Stickers/End.tgs';
-                player.style.display = "none";
-            }
+            // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+            //     player.src = 'Stickers/End.webm';
+            //     emoji.style.display = "none";
+            // }
+            // else {
+            //     emoji.src = 'Stickers/End.tgs';
+            //     player.style.display = "none";
+            // }
+            emoji.src = 'Stickers/End.tgs';
         }
     }
 }
@@ -262,13 +267,13 @@ else if (today == 0) {
     timePassed.innerHTML = 'Приятного';
     timeLeft.innerHTML = 'отдыха!';
     line.style.width = '100%';
-    if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-        player.src = 'Stickers/Sunday.webm';
-        emoji.style.display = "none";
-    }
-    else {
-        emoji.src = 'Stickers/Sunday.tgs';
-        // player.src = 'Stickers/Sunday.webm';
-        player.style.display = "none";
-    }
+    // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+    //     player.src = 'Stickers/Sunday.webm';
+    //     emoji.style.display = "none";
+    // }
+    // else {
+    //     emoji.src = 'Stickers/Sunday.tgs';
+    //     player.style.display = "none";
+    // }
+    emoji.src = 'Stickers/Sunday.tgs';
 }

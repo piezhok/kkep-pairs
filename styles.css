@@ -1,6 +1,5 @@
 body{
     background-color: var(--tg-theme-bg-color);
-    background-color: black;
     overflow-x: hidden;
     /* overflow-y: hidden; */
     /* min-width: 100%; */
@@ -159,17 +158,20 @@ body{
 }
 
 p {
+    position: absolute;
     color: var(--tg-theme-text-color);
-    text-align: left;
     /* position: absolute; */
-    margin: auto;
+    /* margin: auto; */
     /* top:0%; */
     /* margin-right: 2%; */
-    bottom: 10%;
-    margin-left: 8%;
-    font-size: 90%;
+    bottom: 0.2vw;
+    text-align: center;
+    margin: auto;
+    /* margin-top: ;
+    margin-left: 5vw; */
+    font-size: 2vw;
     font-family: Arial, Helvetica, sans-serif;
-    width: 400px;
+    width: 100vw;
     /* font-size: 90%; */
     /* max-width: 70%; */
 }
@@ -177,6 +179,12 @@ p {
 a {
     color: var(--tg-theme-link-color);
     text-decoration: none;
+}
+
+#buy_phone {
+    position: relative;
+    width: 100vw;
+    height: 10vw;
 }
 
 table {
