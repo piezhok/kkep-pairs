@@ -17,7 +17,7 @@ let timePassed = document.getElementById('timerPassed');
 let title = document.getElementById('title');
 let test = document.getElementById('test');
 let emoji = document.getElementById('emoji');
-let mov = document.getElementById('mov')
+let player = document.getElementById('player')
 let bellList = document.getElementById('bell_list')
 let saturdayBellList = document.getElementById('saturday_bell_list')
 
@@ -161,23 +161,23 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
     if ( nowTime < 5*3600000) {
         if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-            mov.src = 'Stickers/Sunday.mov';
+            player.src = 'Stickers/Sunday.webm';
             emoji.style.display = "none";
         }
         else {
             emoji.src = 'Stickers/Sunday.tgs';
-            mov.style.display = "none";
+            player.style.display = "none";
         }
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
         if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-            mov.src = 'Stickers/Start.mov';
+            player.src = 'Stickers/Start.webm';
             emoji.style.display = "none";
         }
         else {
             emoji.src = 'Stickers/Start.tgs';
-            mov.style.display = "none";
+            player.style.display = "none";
         }
         return;
     }
@@ -198,34 +198,34 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         let endBreak = startBreak + duration*60000;
         if ( nowTime >= start && nowTime < end ) {
             if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-                mov.src = 'Stickers/Pair.mov';
+                player.src = 'Stickers/Pair.webm';
                 emoji.style.display = "none";
             }
             else {
                 emoji.src = 'Stickers/Pair.tgs';
-                mov.style.display = "none";
+                player.style.display = "none";
             }
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
             if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-                mov.src = 'Stickers/Break.mov';
+                player.src = 'Stickers/Break.webm';
                 emoji.style.display = "none";
             }
             else {
                 emoji.src = 'Stickers/Break.tgs';
-                mov.style.display = "none";
+                player.style.display = "none";
             }
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
             if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-                mov.src = 'Stickers/End.mov';
+                player.src = 'Stickers/End.webm';
                 emoji.style.display = "none";
             }
             else {
                 emoji.src = 'Stickers/End.tgs';
-                mov.style.display = "none";
+                player.style.display = "none";
             }
         }
     }
@@ -263,12 +263,12 @@ else if (today == 0) {
     timeLeft.innerHTML = 'отдыха!';
     line.style.width = '100%';
     if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-        mov.src = 'Stickers/Sunday.mov';
+        player.src = 'Stickers/Sunday.webm';
         emoji.style.display = "none";
     }
     else {
         emoji.src = 'Stickers/Sunday.tgs';
-        // mov.src = 'Stickers/Sunday.mov';
-        // mov.style.display = "none";
+        // player.src = 'Stickers/Sunday.webm';
+        player.style.display = "none";
     }
 }
