@@ -142,6 +142,13 @@ body{
     margin: 0 auto;
 }
 
+#webm {
+    width: 35%;
+    height: 0%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
 #emoji_placeholder{
     margin: 0 auto;
     width: 100%;
@@ -173,7 +180,7 @@ a {
 
 table {
     position: relative;
-    margin: 4vw auto;
+    margin: 4vw 2vw;
     width: 10vw;
     /* height: 40vw;
     width: 70vw; */
@@ -182,17 +189,16 @@ table {
     /* height: 30vw;
     width: 35vw; */
     background-color: var(--tg-theme-secondary-bg-color);
-    /* background-color: #f4f4f5; */
+    background-color: #f4f4f5;
     color: var(--tg-theme-text-color);
     border-radius: 4vw;
     /* padding: 2vw 3vw; */
     padding: 3vw 4vw;
     font-family: Arial, Helvetica, sans-serif;
-    /* font-size: 5vw; */
     font-size: 5vw;
     text-align: center;
     /* word-spacing: 1vw; */
-    border: 0.5vw solid transparent;
+    border: 0.6vw solid transparent;
     background-clip: border-box;
 }
 
@@ -214,13 +220,13 @@ table::after {
 
 #pairs_block {
     display: flex;
+    justify-content: center;
 }
 
-#bell_list {
+/* #bell_list {
     margin-right: 3vw;
-    /* padding: 3vw 10vw; */
 }
 
 #saturday_bell_list {
     margin-left: 3vw;
-}
+} */

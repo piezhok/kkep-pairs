@@ -16,26 +16,7 @@
                 <div class="text" id="timerLeft"></div>
             </div>
         </div>
-
-        <!-- <table>
-            <tr>
-                <td>1 пара</td>
-                <td>8:45 - 10:05</td>
-            </tr>
-            <tr>
-                <td>2 пара</td>
-                <td>10:25 - 11:45</td>
-            </tr>
-            <tr>
-                <td>3 пара</td>
-                <td>12:05 - 13:25</td>
-            </tr>
-            <tr>
-                <td>4 пара</td>
-                <td>13:35 - 14:55</td>
-            </tr>
-        </table> -->
-
+        
         <div id="pairs_block">
             <table id="bell_list">
                 <tr class="notlast">
@@ -86,8 +67,10 @@
         <div id="emoji_placeholder">
             <tgs-player autoplay loop mode="normal" src="" id="emoji">
             </tgs-player>
+            <video muted autoplay loop id="webm">
+                <source src="Stickers/End.webm" type="video/webm">
+            </video>
         </div>
-
     </section>
     <script src="script.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/tgs-player.js"></script>

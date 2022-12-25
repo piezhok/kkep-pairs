@@ -17,6 +17,7 @@ let timePassed = document.getElementById('timerPassed');
 let title = document.getElementById('title');
 let test = document.getElementById('test');
 let emoji = document.getElementById('emoji');
+let webm = document.getElementById('webm')
 let bellList = document.getElementById('bell_list')
 let saturdayBellList = document.getElementById('saturday_bell_list')
 
@@ -160,14 +161,14 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
     if ( nowTime < 5*3600000) {
         if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i))
-            emoji.src = 'Stickers/Sunday.webm';
+            webm.src = 'Stickers/Sunday.webm';
         else
             emoji.src = 'Stickers/Sunday.tgs';
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
         if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i))
-            emoji.src = 'Stickers/Start.webm';
+            webm.src = 'Stickers/Start.webm';
         else
             emoji.src = 'Stickers/Start.tgs';
         return;
@@ -189,21 +190,21 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         let endBreak = startBreak + duration*60000;
         if ( nowTime >= start && nowTime < end ) {
             if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i))
-                emoji.src = 'Stickers/Pair.webm';
+                webm.src = 'Stickers/Pair.webm';
             else
                 emoji.src = 'Stickers/Pair.tgs';
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
             if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i))
-                emoji.src = 'Stickers/Break.webm';
+                webm.src = 'Stickers/Break.webm';
             else
                 emoji.src = 'Stickers/Break.tgs';
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
             if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i))
-                emoji.src = 'Stickers/End.webm';
+                webm.src = 'Stickers/End.webm';
             else
                 emoji.src = 'Stickers/End.tgs';
         }
@@ -242,7 +243,7 @@ else if (today == 0) {
     timeLeft.innerHTML = 'отдыха!';
     line.style.width = '100%';
     if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i))
-        emoji.src = 'Stickers/Sunday.webm';
+        webm.src = 'Stickers/Sunday.webm';
     else
         emoji.src = 'Stickers/Sunday.tgs';
 }
