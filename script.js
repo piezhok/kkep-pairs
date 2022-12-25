@@ -20,6 +20,7 @@ let emoji = document.getElementById('emoji');
 let player = document.getElementById('player')
 let bellList = document.getElementById('bell_list')
 let saturdayBellList = document.getElementById('saturday_bell_list')
+let footer = document.getElementById('buy_phone');
 
 function padTo2(num) {
     if (num === 0) return '00'
