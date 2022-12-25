@@ -17,9 +17,9 @@ let timePassed = document.getElementById('timerPassed');
 let title = document.getElementById('title');
 let test = document.getElementById('test');
 let emoji = document.getElementById('emoji');
-let player = document.getElementById('player')
-let bellList = document.getElementById('bell_list')
-let saturdayBellList = document.getElementById('saturday_bell_list')
+let player = document.getElementById('player');
+let bellList = document.getElementById('bell_list');
+let saturdayBellList = document.getElementById('saturday_bell_list');
 let footer = document.getElementById('buy_phone');
 
 function padTo2(num) {
@@ -278,3 +278,10 @@ else if (today == 0) {
     // }
     emoji.src = 'Stickers/Sunday.tgs';
 }
+
+// if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+    emoji.removeAttribute("loop")
+    emoji.onclick = function () {
+        emoji.play();
+    };
+// }

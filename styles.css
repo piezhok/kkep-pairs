@@ -181,12 +181,6 @@ a {
     text-decoration: none;
 }
 
-#buy_phone {
-    position: relative;
-    width: 100vw;
-    /* height: 10vw; */
-}
-
 table {
     position: relative;
     margin: 4vw 2vw;
