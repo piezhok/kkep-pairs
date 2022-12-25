@@ -221,6 +221,7 @@ table::after {
 #pairs_block {
     display: flex;
     justify-content: center;
+    -webkit-box-pack: center;
 }
 
 /* #bell_list {
