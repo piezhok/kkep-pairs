@@ -263,7 +263,7 @@ else if (today == 0) {
     timeLeft.innerHTML = 'отдыха!';
     line.style.width = '100%';
     if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-        mov.src = 'Stickers/Sunday.mov';
+        mov.src = 'Stickers/Pair.mov'; // ПОМЕНЯЙ!!!
         emoji.style.display = "none";
     }
     else {
