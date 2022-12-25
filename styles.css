@@ -158,13 +158,13 @@ body{
 }
 
 p {
-    position: absolute;
-    color: var(--tg-theme-text-color);
+    /* position: absolute; */
+    color: var(--tg-theme-hint-color);
     /* position: absolute; */
     /* margin: auto; */
     /* top:0%; */
     /* margin-right: 2%; */
-    bottom: 0.2vw;
+    /* bottom: 0.2vw; */
     text-align: center;
     margin: auto;
     /* margin-top: ;
@@ -184,7 +184,7 @@ a {
 #buy_phone {
     position: relative;
     width: 100vw;
-    height: 10vw;
+    /* height: 10vw; */
 }
 
 table {
