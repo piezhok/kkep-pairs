@@ -189,7 +189,6 @@ table {
     /* height: 30vw;
     width: 35vw; */
     background-color: var(--tg-theme-secondary-bg-color);
-    background-color: #f4f4f5;
     color: var(--tg-theme-text-color);
     /* padding: 2vw 3vw; */
     padding: 3vw 4vw;
@@ -198,7 +197,7 @@ table {
     text-align: center;
     /* word-spacing: 1vw; */
     border-radius: 4vw;
-    border: 0.7vw solid #f4f4f5;
+    border: 0.7vw solid var(--tg-theme-secondary-bg-color);
     /* background-clip: padding-box; */
 }
 
