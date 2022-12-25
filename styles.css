@@ -1,5 +1,6 @@
 body{
     background-color: var(--tg-theme-bg-color);
+    background-color: black;
     overflow-x: hidden;
     /* overflow-y: hidden; */
     /* min-width: 100%; */

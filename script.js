@@ -268,6 +268,7 @@ else if (today == 0) {
     }
     else {
         emoji.src = 'Stickers/Sunday.tgs';
-        mov.style.display = "none";
+        // mov.src = 'Stickers/Sunday.mov';
+        // mov.style.display = "none";
     }
 }
