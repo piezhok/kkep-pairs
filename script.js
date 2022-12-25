@@ -280,10 +280,17 @@ else if (today == 0) {
     emoji.src = 'Stickers/Sunday.tgs';
 }
 
-if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {     // Чтоб Тим Кук сдох
     emoji.removeAttribute("loop")
-    emoji.onclick = function () {
-        emoji.seek(0);
-        emoji.play();
-    }
+    // First we check if you support touch, otherwise it's click:
+    let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+    // Then we bind via that event. This way we only bind one event, instead of the two as below
+    emoji.addEventListener(touchEvent, function () {
+            emoji.seek(0);
+            emoji.play();
+        });
+    // emoji.onclick = function () {
+    //     emoji.seek(0);
+    //     emoji.play();
+    // }
 }
