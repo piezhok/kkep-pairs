@@ -21,6 +21,7 @@ let player = document.getElementById('player');
 let bellList = document.getElementById('bell_list');
 let saturdayBellList = document.getElementById('saturday_bell_list');
 let footer = document.getElementById('buy_phone');
+let btn = document.getElementById('btn');
 
 function padTo2(num) {
     if (num === 0) return '00'
@@ -279,9 +280,10 @@ else if (today == 0) {
     emoji.src = 'Stickers/Sunday.tgs';
 }
 
-// if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
     emoji.removeAttribute("loop")
     emoji.onclick = function () {
+        emoji.seek(0);
         emoji.play();
-    };
-// }
+    }
+}
