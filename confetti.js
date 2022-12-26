@@ -1,6 +1,7 @@
 let time = new Date();
 let now = (time.getHours()*60+time.getMinutes())*60+time.getSeconds();
-if ((today != 6 && today !=0 && now>(14*60+55)*60) || (today == 6 && now>(14*60+15)*60) || (today == 0)) {
+let today = new Date().getDay();
+function cannon(size) {
     tsParticles.load("tsparticles", {
         "fullScreen": {
         "zIndex": 1
@@ -110,8 +111,8 @@ if ((today != 6 && today !=0 && now>(14*60+55)*60) || (today == 6 && now>(14*60+
         },
         "size": {
             "value": {
-            "min": 3,
-            "max": 5
+            "min": size-2,
+            "max": size
             },
             "animation": {
             "enable": true,
@@ -146,4 +147,13 @@ if ((today != 6 && today !=0 && now>(14*60+55)*60) || (today == 6 && now>(14*60+
         }
         }
     });
+}
+
+if ((today != 6 && today !=0 && now>(14*60+55)*60) || (today == 6 && now>(14*60+15)*60) || (today == 0)) {
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+        cannon(10);
+    }
+    else {
+        cannon(5);
+    }
 }

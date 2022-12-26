@@ -255,14 +255,31 @@ function highlight(list) {
     return;
 }
 
-let today = new Date().getDay();
+if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {     // Чтоб Тим Кук сдох
+    emoji.removeAttribute("loop")
+    // First we check if you support touch, otherwise it's click:
+    let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+    // Then we bind via that event. This way we only bind one event, instead of the two as below
+    emoji.addEventListener(touchEvent, function () {
+            emoji.seek(0);
+            emoji.play();
+        });
+    // emoji.onclick = function () {
+    //     emoji.seek(0);
+    //     emoji.play();
+    // }
+}
+
+// 
+//      ИНТЕРВАЛЫ
+//
 if (today != 6 && today !=0) {
     updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
-    setInterval(getTime, 1000, PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
+    let interval = setInterval(getTime, 1000, PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
     highlight(bellList);
 } else if (today == 6) {
     updateEmoji(SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
-    setInterval(getTime, 1000, SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
+    let interval = setInterval(getTime, 1000, SATURDAY_PAIRS_HOURSTART, SATURDAY_PAIRS_MINSTART, SATURDAY_BREAKS_HOURSTART, SATURDAY_BREAKS_MINSTART);
     highlight(saturdayBellList);
 }
 else if (today == 0) {
@@ -280,18 +297,6 @@ else if (today == 0) {
     // }
     emoji.src = 'Stickers/Sunday.tgs';
 }
-
-if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {     // Чтоб Тим Кук сдох
-    emoji.removeAttribute("loop")
-    // First we check if you support touch, otherwise it's click:
-    let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
-    // Then we bind via that event. This way we only bind one event, instead of the two as below
-    emoji.addEventListener(touchEvent, function () {
-            emoji.seek(0);
-            emoji.play();
-        });
-    // emoji.onclick = function () {
-    //     emoji.seek(0);
-    //     emoji.play();
-    // }
-}
+//
+//
+//

@@ -142,13 +142,6 @@ body{
     margin: 0 auto;
 }
 
-#mov {
-    width: 35%;
-    height: 0%;
-    max-width: 300px;
-    margin: 0 auto;
-}
-
 #emoji_placeholder{
     margin: 0 auto;
     width: 100%;
