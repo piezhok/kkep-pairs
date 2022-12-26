@@ -1,6 +1,3 @@
-let time = new Date();
-let now = (time.getHours()*60+time.getMinutes())*60+time.getSeconds();
-let today = new Date().getDay();
 function cannon(size) {
     tsParticles.load("tsparticles", {
         "fullScreen": {
@@ -149,11 +146,18 @@ function cannon(size) {
     });
 }
 
-if ((today != 6 && today !=0 && now>(14*60+55)*60) || (today == 6 && now>(14*60+15)*60) || (today == 0)) {
-    if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-        cannon(10);
+
+let interval = setInterval(function() {
+    if (shootTime == true) {
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+            cannon(10);
+            shootTime = false;
+        }
+        else {
+            cannon(5)
+            shootTime = false;
+        }
+        clearInterval(interval);
     }
-    else {
-        cannon(5);
-    }
-}
+}, 1000)
+        // cannon(5);

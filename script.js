@@ -23,6 +23,8 @@ let saturdayBellList = document.getElementById('saturday_bell_list');
 let footer = document.getElementById('buy_phone');
 let btn = document.getElementById('btn');
 
+let shootTime = false;
+
 function padTo2(num) {
     if (num === 0) return '00'
     if (num>=10) return `${num}`
@@ -84,12 +86,10 @@ function updatePairProgress(hourStart, minStart, duration) {
         end.setHours(start.getHours() + 1, start.getMinutes() + 20, 0);
     else
         end.setHours(start.getHours() + 1, start.getMinutes() + 15, 0);
-    // timePassed.innerHTML = 'Прошло ' + getTimeFormatted(new Date(start - now));
-    // timeLeft.innerHTML = 'Осталось ' + getTimeFormatted(new Date(end - now));
     getTimeFormatted(new Date(start - now), 'Passed');
     getTimeFormatted(new Date(end - now), 'Left');
     let progress = (Math.abs(start - now))/duration * 100;
-    line.style.width = `${progress}%`
+    line.style.width = `${progress}%`;
 }
 
 function updateBreakProgress(hourBreakStart, minBreakStart, breakDuration) {        // breakDuration в минутах
@@ -98,9 +98,6 @@ function updateBreakProgress(hourBreakStart, minBreakStart, breakDuration) {    
     start.setHours(hourBreakStart, minBreakStart, 0);
     let end = new Date();
     end.setHours(start.getHours(), start.getMinutes() + breakDuration, 0);
-    title
-    // timePassed.innerHTML = 'Прошло ' + getTimeFormatted(new Date(start - now))
-    // timeLeft.innerHTML = 'Осталось ' + getTimeFormatted(new Date(end - now));
     getTimeFormatted(new Date(start - now), 'Passed');
     getTimeFormatted(new Date(end - now), 'Left');
     let progress = (Math.abs(start-now))/(breakDuration*60000)*100
@@ -143,6 +140,9 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
+            if (line.style.width == 0) {
+                shootTime = true;
+            }
             if ( duration != 45 )
                 title.innerHTML = `Перерыв – ${duration} минут`;
             else 
@@ -155,6 +155,7 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
             timePassed.innerHTML = 'Приятного';
             timeLeft.innerHTML = 'отдыха!';
             line.style.width = '100%';
+            shootTime = true;
         }
     }
 }
@@ -273,6 +274,7 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {     // Чтоб Тим �
 // 
 //      ИНТЕРВАЛЫ
 //
+let today = new Date().getDay();
 if (today != 6 && today !=0) {
     updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
     let interval = setInterval(getTime, 1000, PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
