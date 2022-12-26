@@ -109,7 +109,7 @@ function updateBreakProgress(hourBreakStart, minBreakStart, breakDuration) {    
 
 function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
     let now = new Date();
-    let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
+    let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds()*1000;
     if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
         timePassed.innerHTML = 'Хорошего';
         timeLeft.innerHTML = 'дня!';
@@ -160,7 +160,7 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
 
 function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
     let now = new Date();
-    let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds();
+    let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds()*1000;
     if ( nowTime < 5*3600000) {
         // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
         //     player.src = 'Stickers/Sunday.webm';
