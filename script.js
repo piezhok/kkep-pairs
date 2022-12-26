@@ -151,8 +151,9 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
-            timePassed.innerHTML = 'Пары';
-            timeLeft.innerHTML = 'кончились!';
+            title.innerHTML = 'Пары кончились'
+            timePassed.innerHTML = 'Приятного';
+            timeLeft.innerHTML = 'отдыха!';
             line.style.width = '100%';
         }
     }
