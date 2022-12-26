@@ -1,6 +1,6 @@
 let time = new Date();
 let now = (time.getHours()*60+time.getMinutes())*60+time.getSeconds();
-if ((today != 6 && today !=0 && now>(12*60+55)*60) || (today == 6 && now>(14*60+15)*60) || (today == 0)) {
+if ((today != 6 && today !=0 && now>(14*60+55)*60) || (today == 6 && now>(14*60+15)*60) || (today == 0)) {
     tsParticles.load("tsparticles", {
         "fullScreen": {
         "zIndex": 1
