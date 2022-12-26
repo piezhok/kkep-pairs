@@ -13,7 +13,7 @@ if ((today != 6 && today !=0 && now>(12*60+55)*60) || (today == 6 && now>(14*60+
             },
             "position": {
             "x": 0,
-            "y": 30
+            "y": 45
             },
             "rate": {
             "quantity": 100,
@@ -37,7 +37,7 @@ if ((today != 6 && today !=0 && now>(12*60+55)*60) || (today == 6 && now>(14*60+
             },
             "position": {
             "x": 100,
-            "y": 30
+            "y": 45
             },
             "rate": {
             "quantity": 100,
