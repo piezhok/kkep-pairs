@@ -11,7 +11,7 @@ const SATURDAY_PAIRS_MINSTART = [45, 10, 35, 0];
 const SATURDAY_BREAKS_HOURSTART = [8 ,10, 11, 12];
 const SATURDAY_BREAKS_MINSTART = [0 ,0, 25, 50];
 
-const line = document.getElementById('progress_line');
+let line = document.getElementById('progress_line');
 let timeLeft = document.getElementById('timerLeft');
 let timePassed = document.getElementById('timerPassed');
 let title = document.getElementById('title');
@@ -144,12 +144,14 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
             }
             if ( duration != 45 )
                 title.innerHTML = `Перерыв – ${duration} минут`;
-            else 
+            else {
                 title.innerHTML = `Перерыв`;
+                timePassed.style.display = "none";
+            }
             updateBreakProgress(breakHourArray[i], breakMinArray[i], duration);
             return;
 
-        } else if (nowTime > (8*60+25)*60000) {
+        } else if (i == 3 && nowTime > (8*60+25)*60000) {
             title.innerHTML = 'Пары кончились'
             timePassed.innerHTML = 'Приятного';
             timeLeft.innerHTML = 'отдыха!';

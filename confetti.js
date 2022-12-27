@@ -151,13 +151,14 @@ function shoot() {
         cannon(10);
     }
     else {
-        cannon(5)
+        cannon(5);
     }
 }
 
-dummy.addEventListener(touchEvent, function () {
-    shoot()
-});
+// dummy.addEventListener(touchEvent, function () {
+//     shoot()
+//     }
+// );
 
 let interval = setInterval(function() {
     if (shootTime == true) {
@@ -165,4 +166,3 @@ let interval = setInterval(function() {
         clearInterval(interval);
     }
 }, 1000)
-        // cannon(5);
