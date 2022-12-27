@@ -1,3 +1,11 @@
+let size = [];
+if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+    size = [outerWidth*0.04-2, outerWidth*0.04]
+}
+else {
+    size = [outerWidth*0.015-2, outerWidth*0.015]
+}
+
 function cannon(size) {
     tsParticles.load("tsparticles", {
         "fullScreen": {
@@ -108,8 +116,8 @@ function cannon(size) {
         },
         "size": {
             "value": {
-            "min": size-2,
-            "max": size
+            "min": size[0],
+            "max": size[1]
             },
             "animation": {
             "enable": true,
@@ -146,15 +154,6 @@ function cannon(size) {
     });
 }
 
-function shoot() {
-    if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-        cannon(10);
-    }
-    else {
-        cannon(5);
-    }
-}
-
 // dummy.addEventListener(touchEvent, function () {
 //     shoot()
 //     }
@@ -162,7 +161,7 @@ function shoot() {
 
 let interval = setInterval(function() {
     if (shootTime == true) {
-        shoot()
+        cannon(size);
         clearInterval(interval);
     }
 }, 1000)

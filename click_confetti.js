@@ -1,11 +1,3 @@
-let size = [];
-if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-    size = [outerWidth*0.04-2, outerWidth*0.04]
-}
-else {
-    size = [outerWidth*0.015-2, outerWidth*0.015]
-}
-
 let particlesContainer;
 
 tsParticles
@@ -109,52 +101,56 @@ tsParticles
   });
 
 dummy.addEventListener(touchEvent, () => {
-  if (particlesContainer && particlesContainer.addEmitter) {
-    particlesContainer.addEmitter(
-      {
-        direction: "top-right",
-        startCount: 20,
-        life: {
-          count: 1,
-          duration: 1,
-          delay: 0
-        },
-        rate: {
-          delay: 10,
-          quantity: 100
-        },
-        size: {
-          width: 0,
-          height: 0
-        },
-        "position": {
-          "x": 0,
-          "y": 45
-          }
-      },
-    );
-    particlesContainer.addEmitter(
+    if("vibrate" in navigator) {
+        let vibration = 10;
+        navigator.vibrate(vibration);
+    }
+    if (particlesContainer && particlesContainer.addEmitter) {
+        particlesContainer.addEmitter(
         {
-          direction: "top-left",
-          startCount: 20,
-          life: {
+            direction: "top-right",
+            startCount: 20,
+            life: {
             count: 1,
             duration: 1,
             delay: 0
             },
-          rate: {
+            rate: {
             delay: 10,
             quantity: 100
             },
-          size: {
+            size: {
             width: 0,
             height: 0
             },
-          "position": {
-            "x": 100,
+            "position": {
+            "x": 0,
             "y": 45
             }
         },
+        );
+        particlesContainer.addEmitter(
+            {
+            direction: "top-left",
+            startCount: 20,
+            life: {
+                count: 1,
+                duration: 1,
+                delay: 0
+                },
+            rate: {
+                delay: 10,
+                quantity: 100
+                },
+            size: {
+                width: 0,
+                height: 0
+                },
+            "position": {
+                "x": 100,
+                "y": 45
+                }
+        },
       );
-  }
+    }
 });
