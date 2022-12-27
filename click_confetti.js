@@ -1,3 +1,11 @@
+let size = [];
+if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+    size = [outerWidth*0.02-2, outerWidth*0.02]
+}
+else {
+    size = [outerWidth*0.01-2, outerWidth*0.01]
+}
+
 let particlesContainer;
 
 tsParticles
@@ -23,8 +31,8 @@ tsParticles
         }
       },
       size: {
-        // value: { min: outerWidth*0.005, max: outerWidth*0.005 }
-        value: outerWidth*0.01
+        value: { min: size[0], max: size[1] }
+        // value: outerWidth*0.01
       },
       life: {
         duration: {
