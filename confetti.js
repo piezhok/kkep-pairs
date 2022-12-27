@@ -146,17 +146,22 @@ function cannon(size) {
     });
 }
 
+function shoot() {
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+        cannon(10);
+    }
+    else {
+        cannon(5)
+    }
+}
+
+dummy.addEventListener(touchEvent, function () {
+    shoot()
+});
 
 let interval = setInterval(function() {
     if (shootTime == true) {
-        if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-            cannon(10);
-            shootTime = false;
-        }
-        else {
-            cannon(5)
-            shootTime = false;
-        }
+        shoot()
         clearInterval(interval);
     }
 }, 1000)

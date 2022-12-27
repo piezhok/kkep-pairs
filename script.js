@@ -20,8 +20,7 @@ let emoji = document.getElementById('emoji');
 let player = document.getElementById('player');
 let bellList = document.getElementById('bell_list');
 let saturdayBellList = document.getElementById('saturday_bell_list');
-let footer = document.getElementById('buy_phone');
-let btn = document.getElementById('btn');
+let dummy = document.getElementById('dummy');
 
 let shootTime = false;
 
@@ -140,7 +139,7 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
-            if (line.style.width == 0) {
+            if (line.style.width == '0%') {
                 shootTime = true;
             }
             if ( duration != 45 )
@@ -256,10 +255,10 @@ function highlight(list) {
     return;
 }
 
+// First we check if you support touch, otherwise it's click:
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {     // Чтоб Тим Кук сдох
     emoji.removeAttribute("loop")
-    // First we check if you support touch, otherwise it's click:
-    let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
     // Then we bind via that event. This way we only bind one event, instead of the two as below
     emoji.addEventListener(touchEvent, function () {
             emoji.seek(0);

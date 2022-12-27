@@ -10,6 +10,9 @@ body{
 
 .container{
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .text{
@@ -32,56 +35,33 @@ body{
     color: var(--tg-theme-text-color);
 }
 
-/* #fake_title{
-    width: 96%;
-    opacity: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 150%;
-} */
-
 #timeBox {
-    /* width: 100%;
-    height: 100%; */
-
     position: absolute;
     top:50%;
-    /* left: 20px; */
     left: 4%;
     transform: translate(0px, -50%);
-
-    /* left:20px; */
-    /* margin-left: 20px; */
-    /* margin: 0% 0px; */
 }
 
 #timerPassed {
-    /* position: absolute; */
-    /* top:45px; */
-    margin-top: 0px;
+    margin-top: 0vw;
+    /* margin-top: 0px; */
 }
 
 #timerLeft {
-    /* position: absolute; */
-    /* top: 30px; */
-    margin-top: 5px;
+    margin-top: 0.5vw;
+    /* margin-top: 5px; */
 }
 
 #progress_bar {
     position: relative;
 
     margin: 0 auto;
-
-    /* border-radius:30px; */
     border-radius: 6vw;
-    /* top: 35px; */
     width: 96%;
-    /* width: 565px; */
-    /* height: 150px; */
     height: 25vw;
     background-color: black;
     -webkit-mask:linear-gradient(#fff 0 0);
           mask:linear-gradient(#fff 0 0);
-    /* overflow: hidden; */
 }
 
 #progress_bar::before {
@@ -112,38 +92,15 @@ body{
     background-image: linear-gradient(90deg, rgba(240,5,127,1) 0%, rgba(0,98,173,1) 50%, rgba(0,156,66,1) 100%);
 }
 
-
-/* #fake_bar {
-    border-radius:30px;
-    position: absolute;
-    top: 4%;
-    left: 2%;
-    width: 96%;
-    min-height: 150px;
-    height: 20%;
-} */
-
-
-/* #emoji {
-    width: 50%;
-}
-
-#emoji_placeholder{
-    width: 100%;
-    position: absolute;
-    top: 125%;
-    text-align: center;
-} */
-
 #emoji {
-    width: 60%;
+    width: 55%;
     height: 0%;
     max-width: 500px;
     margin: 0 auto;
 }
 
 #emoji_placeholder{
-    margin: 0 auto;
+    margin: -1vw auto;
     width: 100%;
     max-height: 0;
     /* margin-top: vw; */
@@ -209,8 +166,6 @@ table::after {
 
 .notlast>td {
     padding-bottom: 2vw;
-    width: 100%;
-    margin: 0 50%;
 }
 
 #pairs_block {
@@ -219,10 +174,12 @@ table::after {
     -webkit-box-pack: center;
 }
 
-/* #bell_list {
-    margin-right: 3vw;
+footer {
+    text-align: center;
+    margin-top: auto;
 }
 
-#saturday_bell_list {
-    margin-left: 3vw;
-} */
+img {
+    width: 15vw;
+    margin: auto;
+}
