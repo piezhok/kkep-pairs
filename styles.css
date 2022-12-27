@@ -102,7 +102,6 @@ body{
 #emoji_placeholder{
     margin: -1vw auto;
     width: 100%;
-    max-height: 0;
     /* margin-top: vw; */
     text-align: center;
 }

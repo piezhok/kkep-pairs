@@ -1,9 +1,9 @@
 let size = [];
 if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-    size = [outerWidth*0.02-2, outerWidth*0.02]
+    size = [outerWidth*0.04-2, outerWidth*0.04]
 }
 else {
-    size = [outerWidth*0.01-2, outerWidth*0.01]
+    size = [outerWidth*0.02-2, outerWidth*0.02]
 }
 
 let particlesContainer;
