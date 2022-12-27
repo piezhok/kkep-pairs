@@ -23,7 +23,8 @@ tsParticles
         }
       },
       size: {
-        value: { min: 3, max: 5 }
+        // value: { min: outerWidth*0.005, max: outerWidth*0.005 }
+        value: outerWidth*0.01
       },
       life: {
         duration: {
