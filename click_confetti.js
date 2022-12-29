@@ -101,10 +101,6 @@ tsParticles
   });
 
 dummy.addEventListener(touchEvent, () => {
-    if("vibrate" in navigator) {
-        let vibration = 10;
-        navigator.vibrate(vibration);
-    }
     if (particlesContainer && particlesContainer.addEmitter) {
         particlesContainer.addEmitter(
         {

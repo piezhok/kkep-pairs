@@ -93,7 +93,8 @@ body{
 }
 
 #emoji {
-    width: 55%;
+    /* width: 50%; */
+    width: 25vw;
     height: 0%;
     max-width: 500px;
     margin: 0 auto;
