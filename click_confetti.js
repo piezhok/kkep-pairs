@@ -5,7 +5,6 @@ tsParticles
     "fullScreen": {
         "zIndex": 1
     },
-    // fpsLimit: 60,
     particles: {
       number: {
         value: 0
@@ -24,7 +23,6 @@ tsParticles
       },
       size: {
         value: { min: size[0], max: size[1] }
-        // value: outerWidth*0.01
       },
       life: {
         duration: {

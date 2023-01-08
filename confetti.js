@@ -154,11 +154,6 @@ function cannon(size) {
     });
 }
 
-// dummy.addEventListener(touchEvent, function () {
-//     shoot()
-//     }
-// );
-
 let interval = setInterval(function() {
     if (shootTime == true) {
         cannon(size);
