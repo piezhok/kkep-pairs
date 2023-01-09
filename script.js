@@ -309,4 +309,4 @@ else if (today == 0) {
 //
 
 let testDiv = document.getElementById('test');
-testDiv.innerHTML = `${window.Telegram.WebApp.initDataUnsafe.user.language_code}`
+testDiv.innerHTML = `${window.Telegram.WebApp.platform}`
