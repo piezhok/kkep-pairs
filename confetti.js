@@ -153,7 +153,6 @@ function cannon(size) {
         }
     });
 }
-
 let interval = setInterval(function() {
     if (shootTime == true) {
         cannon(size);

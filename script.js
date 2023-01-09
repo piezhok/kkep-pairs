@@ -30,7 +30,7 @@ function padTo2(num) {
     return `0${num}`
 }
 
-function getTimeFormatted(date, beforeS){       // beforeS = 'Passed' || 'Left'
+function getTimeFormatted(date, beforeS){
     date = new Date(Math.abs(date.getTime()));
     let hours = date.getUTCHours();
     let minutes = date.getUTCMinutes();
@@ -73,7 +73,6 @@ function getTimeFormatted(date, beforeS){       // beforeS = 'Passed' || 'Left'
         else if (s.includes('сек.'))
             timeLeft.innerHTML = 'Осталось '+s;
     }
-    // return `${padTo2(hours)}:${padTo2(minutes)}:${padTo2(seconds)}`;
 }
 
 function updatePairProgress(hourStart, minStart, duration) {
@@ -91,7 +90,7 @@ function updatePairProgress(hourStart, minStart, duration) {
     line.style.width = `${progress}%`;
 }
 
-function updateBreakProgress(hourBreakStart, minBreakStart, breakDuration) {        // breakDuration в минутах
+function updateBreakProgress(hourBreakStart, minBreakStart, breakDuration) {
     let now = new Date();
     let start = new Date();
     start.setHours(hourBreakStart, minBreakStart, 0);
@@ -169,26 +168,10 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     let now = new Date();
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds()*1000;
     if ( nowTime < 5*3600000) {
-        // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-        //     player.src = 'Stickers/Sunday.webm';
-        //     emoji.style.display = "none";
-        // }
-        // else {
-        //     emoji.src = 'Stickers/Sunday.tgs';
-        //     player.style.display = "none";
-        // }
         emoji.src = 'Stickers/Sunday.tgs';
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
-        // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-        //     player.src = 'Stickers/Start.webm';
-        //     emoji.style.display = "none";
-        // }
-        // else {
-        //     emoji.src = 'Stickers/Start.tgs';
-        //     player.style.display = "none";
-        // }
         emoji.src = 'Stickers/Start.tgs';
         return;
     }
@@ -208,77 +191,34 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         }
         let endBreak = startBreak + duration*60000;
         if ( nowTime >= start && nowTime < end ) {
-            // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-            //     player.src = 'Stickers/Pair.webm';
-            //     emoji.style.display = "none";
-            // }
-            // else {
-            //     emoji.src = 'Stickers/Pair.tgs';
-            //     player.style.display = "none";
-            // }
             emoji.src = 'Stickers/Pair.tgs';
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
-            // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-            //     player.src = 'Stickers/Break.webm';
-            //     emoji.style.display = "none";
-            // }
-            // else {
-            //     emoji.src = 'Stickers/Break.tgs';
-            //     player.style.display = "none";
-            // }
             emoji.src = 'Stickers/Break.tgs';
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
-            // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-            //     player.src = 'Stickers/End.webm';
-            //     emoji.style.display = "none";
-            // }
-            // else {
-            //     emoji.src = 'Stickers/End.tgs';
-            //     player.style.display = "none";
-            // }
             emoji.src = 'Stickers/End.tgs';
         }
     }
 }
 
 function highlight(list) {
-    // let i = 1
-    // let j = 0.5
-    // timer = setInterval(function() {
-    //     i += 0.5;
-    //     list.style.padding = `3vw ${i}vw`
-    //     if (list.style.padding == '3vw 10vw') {
-    //         clearInterval(timer)
-    //         return;
-    //     }
-    // }, 15)
     list.style.backgroundClip = 'padding-box';
     list.style.border = '0.5vw solid transparent';
     return;
 }
 
-// First we check if you support touch, otherwise it's click:
 let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {     // Чтоб Тим Кук сдох
     emoji.removeAttribute("loop")
-    // Then we bind via that event. This way we only bind one event, instead of the two as below
     emoji.addEventListener(touchEvent, function () {
             emoji.seek(0);
             emoji.play();
         });
-    // emoji.onclick = function () {
-    //     emoji.seek(0);
-    //     emoji.play();
-    // }
 }
 
-// 
-//      ИНТЕРВАЛЫ
-//
 let today = new Date().getDay();
 if (today != 6 && today !=0) {
     updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
@@ -294,19 +234,5 @@ else if (today == 0) {
     timePassed.innerHTML = 'Приятного';
     timeLeft.innerHTML = 'отдыха!';
     line.style.width = '100%';
-    // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-    //     player.src = 'Stickers/Sunday.webm';
-    //     emoji.style.display = "none";
-    // }
-    // else {
-    //     emoji.src = 'Stickers/Sunday.tgs';
-    //     player.style.display = "none";
-    // }
     emoji.src = 'Stickers/Sunday.tgs';
 }
-//
-//
-//
-
-let testDiv = document.getElementById('test');
-testDiv.innerHTML = `${window.Telegram.WebApp.platform}`
