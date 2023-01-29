@@ -9,12 +9,14 @@
 <body>
     <section onselectstart="return false" class="container">
 
-        <div id="title">&nbsp</div>
-        <div id="progress_bar">
-            <div id="progress_line"></div>
-            <div id="timeBox">
-                <div class="text" id="timerPassed"></div>
-                <div class="text" id="timerLeft"></div>
+        <div id="progressBox">
+            <div id="title">&nbsp</div>
+            <div id="progress_bar">
+                <div id="progress_line"></div>
+                <div id="timeBox">
+                        <div class="text" id="timerPassed"></div>
+                        <div class="text" id="timerLeft"></div>
+                </div>
             </div>
         </div>
 
@@ -68,6 +70,8 @@
         <div id="emoji_placeholder">
             <tgs-player autoplay loop mode="normal" src="" id="emoji">
             </tgs-player>
+            <!-- <video playsinline muted autoplay loop src="Stickers/Break.mov" type="video/mov" id="player">
+            </video> -->
         </div>
         <footer>
             <img id="dummy" src="dummy.png" alt="">

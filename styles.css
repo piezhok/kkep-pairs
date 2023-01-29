@@ -1,7 +1,11 @@
 body{
-    background-color: var(--tg-theme-bg-color);
+    /* background-color: var(--tg-theme-bg-color); */
+    background-color: var(--tg-theme-secondary-bg-color);
     overflow-x: hidden;
+    /* overflow-y: hidden; */
+    /* min-width: 100%; */
     max-width: 100%;
+    /* max-width: 390px; */
     margin: 0;
 }
 
@@ -19,7 +23,17 @@ body{
     font-size: 4vw;
 }
 
+#progressBox {
+    background-color: var(--tg-theme-bg-color);
+    height: 38vw;
+    border-radius: 0 0 5vw 5vw;
+}
+
 #title {
+    /* position: absolute; */
+    /* top: -25%; */
+    /* margin-top: 2px;
+    margin-bottom: 4px; */
     margin-top: 0.5vw;
     margin-bottom: 2vw;
     text-align: center;
@@ -37,10 +51,12 @@ body{
 
 #timerPassed {
     margin-top: 0vw;
+    /* margin-top: 0px; */
 }
 
 #timerLeft {
     margin-top: 0.5vw;
+    /* margin-top: 5px; */
 }
 
 #progress_bar {
@@ -84,6 +100,7 @@ body{
 }
 
 #emoji {
+    /* width: 50%; */
     width: 25vw;
     height: 0%;
     max-width: 500px;
@@ -93,21 +110,55 @@ body{
 #emoji_placeholder{
     margin: -1vw auto;
     width: 100%;
+    /* margin-top: vw; */
     text-align: center;
+}
+
+p {
+    /* position: absolute; */
+    color: var(--tg-theme-hint-color);
+    /* position: absolute; */
+    /* margin: auto; */
+    /* top:0%; */
+    /* margin-right: 2%; */
+    /* bottom: 0.2vw; */
+    text-align: center;
+    margin: auto;
+    /* margin-top: ;
+    margin-left: 5vw; */
+    font-size: 2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    /* font-size: 90%; */
+    /* max-width: 70%; */
+}
+
+a {
+    color: var(--tg-theme-link-color);
+    text-decoration: none;
 }
 
 table {
     position: relative;
     margin: 4vw 2vw;
     width: 10vw;
-    background-color: var(--tg-theme-secondary-bg-color);
+    /* height: 40vw;
+    width: 70vw; */
+    /* height: 40vw;
+    width: 45vw; */
+    /* height: 30vw;
+    width: 35vw; */
+    background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
+    /* padding: 2vw 3vw; */
     padding: 3vw 4vw;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 5vw;
     text-align: center;
+    /* word-spacing: 1vw; */
     border-radius: 4vw;
     border: 0.7vw solid var(--tg-theme-secondary-bg-color);
+    /* background-clip: padding-box; */
 }
 
 table::after {
