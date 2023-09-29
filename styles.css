@@ -7,6 +7,7 @@ body{
     max-width: 100%;
     /* max-width: 390px; */
     margin: 0;
+    font-family: system-ui;
 }
 
 .container{
@@ -17,7 +18,6 @@ body{
 }
 
 .text{
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-weight: bold;
     font-size: 4vw;
