@@ -15,6 +15,8 @@ let line = document.getElementById('progress_line');
 let timeLeft = document.getElementById('timerLeft');
 let timePassed = document.getElementById('timerPassed');
 let title = document.getElementById('title');
+let titleStart = document.getElementById('title-start');
+let titleEnd = document.getElementById('title-end');
 let test = document.getElementById('test');
 let emoji = document.getElementById('emoji');
 let player = document.getElementById('player');
@@ -30,7 +32,7 @@ function padTo2(num) {
     return `0${num}`
 }
 
-function getTimeFormatted(date, beforeS){
+function getTimeFormatted(date, beforeS){       // beforeS = 'Passed' || 'Left'
     date = new Date(Math.abs(date.getTime()));
     let hours = date.getUTCHours();
     let minutes = date.getUTCMinutes();
@@ -73,6 +75,7 @@ function getTimeFormatted(date, beforeS){
         else if (s.includes('сек.'))
             timeLeft.innerHTML = 'Осталось '+s;
     }
+    // return `${padTo2(hours)}:${padTo2(minutes)}:${padTo2(seconds)}`;
 }
 
 function updatePairProgress(hourStart, minStart, duration) {
@@ -90,7 +93,7 @@ function updatePairProgress(hourStart, minStart, duration) {
     line.style.width = `${progress}%`;
 }
 
-function updateBreakProgress(hourBreakStart, minBreakStart, breakDuration) {
+function updateBreakProgress(hourBreakStart, minBreakStart, breakDuration) {        // breakDuration в минутах
     let now = new Date();
     let start = new Date();
     start.setHours(hourBreakStart, minBreakStart, 0);
@@ -130,7 +133,9 @@ function getTime(PairHourArray, PairMinArray, breakHourArray, breakMinArray) {
         if ( nowTime >= start && nowTime < end ) {
             let endHour = Math.floor(end/3600000);
             let endMin = (end/60000)-endHour*60;
-            title.innerHTML = `${i+1} пара – ${PairHourArray[i]}:${padTo2(PairMinArray[i])} - ${endHour}:${padTo2(endMin)}`
+            title.innerHTML = `${i+1} пара`;
+            titleStart.innerHTML = `${PairHourArray[i]}:${padTo2(PairMinArray[i])}`;
+            titleEnd.innerHTML = `${endHour}:${padTo2(endMin)}`;
             if (PairHourArray != SATURDAY_PAIRS_HOURSTART)
                 updatePairProgress(PairHourArray[i], PairMinArray[i], PAIR_DURATION);
             else
@@ -168,11 +173,27 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
     let now = new Date();
     let nowTime = (now.getHours()*60+now.getMinutes())*60000+now.getSeconds()*1000;
     if ( nowTime < 5*3600000) {
-        emoji.src = 'Stickers/Sunday.tgs';
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+            player.src = 'Stickers/Sunday.lottie';
+            emoji.style.display = "none";
+        }
+        else {
+            emoji.src = 'Stickers/Sunday.tgs';
+            player.style.display = "none";
+        }
+        // emoji.src = 'Stickers/Sunday.tgs';
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
-        emoji.src = 'Stickers/Start.tgs';
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+            player.src = 'Stickers/Start.lottie';
+            emoji.style.display = "none";
+        }
+        else {
+            emoji.src = 'Stickers/Start.tgs';
+            player.style.display = "none";
+        }
+        // emoji.src = 'Stickers/Start.tgs';
         return;
     }
     for (let i = 0; i<4; i++) {
@@ -191,34 +212,72 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         }
         let endBreak = startBreak + duration*60000;
         if ( nowTime >= start && nowTime < end ) {
-            emoji.src = 'Stickers/Pair.tgs';
+            if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+                player.src = 'Stickers/Pair.lottie';
+                emoji.style.display = "none";
+            }
+            else {
+                emoji.src = 'Stickers/Pair.tgs';
+                player.style.display = "none";
+            }
+            // emoji.src = 'Stickers/Pair.tgs';
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
-            emoji.src = 'Stickers/Break.tgs';
+            if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+                player.src = 'Stickers/Break.lottie';
+                emoji.style.display = "none";
+            }
+            else {
+                emoji.src = 'Stickers/Break.tgs';
+                player.style.display = "none";
+            }
+            // emoji.src = 'Stickers/Break.tgs';
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
-            emoji.src = 'Stickers/End.tgs';
+            if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+                player.src = 'Stickers/End.lottie';
+                emoji.style.display = "none";
+            }
+            else {
+                emoji.src = 'Stickers/End.tgs';
+                player.style.display = "none";
+            }
+            // emoji.src = 'Stickers/End.tgs';
         }
     }
 }
 
 function highlight(list) {
+    // let i = 1
+    // let j = 0.5
+    // timer = setInterval(function() {
+    //     i += 0.5;
+    //     list.style.padding = `3vw ${i}vw`
+    //     if (list.style.padding == '3vw 10vw') {
+    //         clearInterval(timer)
+    //         return;
+    //     }
+    // }, 15)
     list.style.backgroundClip = 'padding-box';
     list.style.border = '0.5vw solid transparent';
     return;
 }
 
-let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
-if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {     // Чтоб Тим Кук сдох
-    emoji.removeAttribute("loop")
-    emoji.addEventListener(touchEvent, function () {
-            emoji.seek(0);
-            emoji.play();
-        });
-}
+// First we check if you support touch, otherwise it's click:
+// let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+// if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {     // Чтоб Тим Кук сдох
+//     emoji.removeAttribute("loop")
+//     emoji.addEventListener(touchEvent, function () {
+//             emoji.seek(0);
+//             emoji.play();
+//         });
+// }
 
+// 
+//      ИНТЕРВАЛЫ
+//
 let today = new Date().getDay();
 if (today != 6 && today !=0) {
     updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
@@ -234,5 +293,16 @@ else if (today == 0) {
     timePassed.innerHTML = 'Приятного';
     timeLeft.innerHTML = 'отдыха!';
     line.style.width = '100%';
-    emoji.src = 'Stickers/Sunday.tgs';
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+        player.src = 'Stickers/Sunday.lottie';
+        emoji.style.display = "none";
+    }
+    else {
+        emoji.src = 'Stickers/Sunday.tgs';
+        player.style.display = "none";
+    }
+    // emoji.src = 'Stickers/Sunday.tgs';
 }
+//
+//
+//
