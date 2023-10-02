@@ -266,7 +266,7 @@ function highlight(list) {
 }
 
 // First we check if you support touch, otherwise it's click:
-// let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {     // Чтоб Тим Кук сдох
 //     emoji.removeAttribute("loop")
 //     emoji.addEventListener(touchEvent, function () {
