@@ -117,8 +117,8 @@ body{
 
 .emoji-player {
     /* width: 50%; */
-    /* width: 25vw; */
-    width: 10rem;
+    width: 25vw;
+    /* width: 10rem; */
     height: 0%;
     max-width: 500px;
     margin: 0 auto;

@@ -26,6 +26,19 @@ let dummy = document.getElementById('dummy');
 
 let shootTime = false;
 
+function placeEmoji(emojiName) {
+    emoji.src = `Stickers/${emojiName}.tgs`;
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
+            // player.src = `Stickers/${emojiName}.lottie`;
+            // emoji.style.display = "none";
+            emoji.style.width = "20rem";
+        }
+        // else {
+            // emoji.src = `Stickers/${emojiName}.tgs`;
+            // player.style.display = "none";
+        // }
+}
+
 function padTo2(num) {
     if (num === 0) return '00'
     if (num>=10) return `${num}`
@@ -181,7 +194,8 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         //     emoji.src = 'Stickers/Sunday.tgs';
         //     player.style.display = "none";
         // }
-        emoji.src = 'Stickers/Sunday.tgs';
+        placeEmoji("Sunday");
+        // emoji.src = 'Stickers/Sunday.tgs';
         return;
     }
     else if ( nowTime < 8*3600000  &&  nowTime > 5*3600000 ) {
@@ -193,7 +207,8 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
         //     emoji.src = 'Stickers/Start.tgs';
         //     player.style.display = "none";
         // }
-        emoji.src = 'Stickers/Start.tgs';
+        placeEmoji("Start");
+        // emoji.src = 'Stickers/Start.tgs';
         return;
     }
     for (let i = 0; i<4; i++) {
@@ -220,7 +235,8 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
             //     emoji.src = 'Stickers/Pair.tgs';
             //     player.style.display = "none";
             // }
-            emoji.src = 'Stickers/Pair.tgs';
+            placeEmoji("Pair");
+            // emoji.src = 'Stickers/Pair.tgs';
             return;
 
         } else if ( nowTime >= startBreak && nowTime < endBreak )  {
@@ -232,7 +248,8 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
             //     emoji.src = 'Stickers/Break.tgs';
             //     player.style.display = "none";
             // }
-            emoji.src = 'Stickers/Break.tgs';
+            placeEmoji("Break");
+            // emoji.src = 'Stickers/Break.tgs';
             return;
 
         } else if (nowTime > (8*60+25)*60000) {
@@ -244,7 +261,8 @@ function updateEmoji(PairHourArray, PairMinArray, breakHourArray, breakMinArray)
             //     emoji.src = 'Stickers/End.tgs';
             //     player.style.display = "none";
             // }
-            emoji.src = 'Stickers/End.tgs';
+            placeEmoji("End");
+            // emoji.src = 'Stickers/End.tgs';
         }
     }
 }
@@ -303,7 +321,8 @@ else if (today == 0) {
     //     player.style.display = "none";
     // }
     // emoji.style.width = "15.3125rem";
-    emoji.src = 'Stickers/Sunday.tgs';
+    placeEmoji("Sunday");
+    // emoji.src = 'Stickers/Sunday.tgs';
 }
 //
 //
