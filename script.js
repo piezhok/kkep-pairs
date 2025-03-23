@@ -297,7 +297,7 @@ let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 //      ИНТЕРВАЛЫ
 //
 let today = new Date().getDay();
-if (today != 6 && today !=0) {
+if (today != 6) {
     updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
     let interval = setInterval(getTime, 1000, PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
     highlight(bellList);
