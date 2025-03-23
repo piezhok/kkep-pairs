@@ -297,7 +297,7 @@ let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 //      ИНТЕРВАЛЫ
 //
 let today = new Date().getDay();
-if (today != 6) {
+if (today != 6 && today != 0) {
     updateEmoji(PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
     let interval = setInterval(getTime, 1000, PAIRS_HOURSTART, PAIRS_MINSTART, BREAKS_HOURSTART, BREAKS_MINSTART);
     highlight(bellList);
@@ -307,10 +307,12 @@ if (today != 6) {
     highlight(saturdayBellList);
 }
 else if (today == 0) {
-    title.innerHTML = `Выходной`
-    timePassed.innerHTML = 'Приятного';
-    timeLeft.innerHTML = 'отдыха!';
-    line.style.width = '100%';
+    title.innerHTML = `3 пара`;
+    titleStart.innerHTML = `12:05`;
+    titleEnd.innerHTML = `13:25`;
+    timePassed.innerHTML = 'Прошло 42 минуты';
+    timeLeft.innerHTML = 'Осталось 38 минут';
+    line.style.width = '60%';
     // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
     //     // player.src = 'Stickers/Sunday.lottie';
     //     // emoji.style.display = "none";
@@ -321,7 +323,8 @@ else if (today == 0) {
     //     player.style.display = "none";
     // }
     // emoji.style.width = "15.3125rem";
-    placeEmoji("Sunday");
+    // placeEmoji("Sunday");
+    placeEmoji("Pair");
     // emoji.src = 'Stickers/Sunday.tgs';
 }
 //
