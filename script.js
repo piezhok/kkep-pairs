@@ -307,12 +307,10 @@ if (today != 6 && today != 0) {
     highlight(saturdayBellList);
 }
 else if (today == 0) {
-    title.innerHTML = `3 пара`;
-    titleStart.innerHTML = `12:05`;
-    titleEnd.innerHTML = `13:25`;
-    timePassed.innerHTML = 'Прошло 42 минуты';
-    timeLeft.innerHTML = 'Осталось 38 минут';
-    line.style.width = '60%';
+    title.innerHTML = `Выходной`
+     timePassed.innerHTML = 'Приятного';
+     timeLeft.innerHTML = 'отдыха!';
+     line.style.width = '100%';
     // if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
     //     // player.src = 'Stickers/Sunday.lottie';
     //     // emoji.style.display = "none";
@@ -323,8 +321,8 @@ else if (today == 0) {
     //     player.style.display = "none";
     // }
     // emoji.style.width = "15.3125rem";
-    // placeEmoji("Sunday");
-    placeEmoji("Pair");
+    placeEmoji("Sunday");
+    // placeEmoji("Pair");
     // emoji.src = 'Stickers/Sunday.tgs';
 }
 //
